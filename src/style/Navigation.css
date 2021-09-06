@@ -1,0 +1,113 @@
+.navigation-wrapper {
+  position: fixed;
+  padding: 0 2.4rem;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navigation-brand {
+  margin-right: 8px;
+}
+
+.navigation-logo {
+  fill: #0a66c2;
+  border-radius: none;
+}
+
+.top-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navigation-search {
+  display: block;
+  z-index: 0;
+  max-width: 280px;
+  position: relative;
+}
+input.navigation-search-input {
+  font-weight: 400;
+  border: none;
+  font-size: 14px;
+  height: 34px;
+  background-color: #eef3f8;
+  border-radius: 0.4rem;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 0 8px 0 40px;
+}
+.search-icon {
+  padding: 4px 8px 4px 8px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navigation-items-wrapper {
+  min-height: 52px;
+  margin-left: auto;
+}
+.navigation-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.navigation-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navigation-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: rgba(0, 0, 0, 0.6);
+  min-height: 52px;
+  min-width: 80px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  transition: all 500ms;
+}
+.navigation-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+}
+button.navigation-link {
+  border: none;
+  background-color: transparent;
+}
+.link-personal-image {
+  border-radius: 50px;
+  height: 24px;
+  width: 24px;
+  border: none;
+}
+.text-personal {
+  display: flex;
+  flex-direction: row;
+}
+.navigation-divider {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+.premium-link {
+  color: #915907;
+  font: 400;
+  text-align: center;
+  max-width: 100px;
+}
+.premium-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+}
