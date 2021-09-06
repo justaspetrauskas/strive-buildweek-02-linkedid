@@ -1,24 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
-require("dotenv").config();
-
+import Footer from "./conponents/Footer";
+import Profile from "./conponents/Profile";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
-    <>
-<Router >
-<Navbar />
+    <div>
+      <Profile />
+      <Footer />
+    </div>
 
-<Container >
-  <Row>  
-    <Col> </Col> 
-    <Col md={8}><Route path = '/' exact component= {Profile} /> <Profile /> </Col>
-    <Col md={3}> <SideBar /> </Col>
-    </Row> 
-  
-   <Conainer />
-<Footer />
-</Router>
-    </>
   );
 }
 
