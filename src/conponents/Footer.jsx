@@ -34,6 +34,8 @@ const Footer = () => {
             <li>Privacy & Terms</li>
             <li>Sales Solutions</li>
             <li>Safety Center</li>
+            <hr />
+            <p>LinkedIn Corporation 2021</p>
           </ul>
         </Col>
         <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-2">
