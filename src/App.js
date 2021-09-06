@@ -2,6 +2,7 @@ import "./App.css";
 
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
+import ProfileJumbo from "./components/ProfileJumbo";
 import Navigation from "./components/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -10,7 +11,7 @@ function App() {
   return (
     <div>
       <Navigation />
-      <Profile />
+      <ProfileJumbo />
       <Footer />
     </div>
   );
