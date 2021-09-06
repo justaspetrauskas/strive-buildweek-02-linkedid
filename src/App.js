@@ -18,8 +18,8 @@ function App() {
 
 <Container >
   <Row>  
-    
-    <Col md={9}><Route path = '/' exact component= {Profile} /> <Profile /> </Col>
+    <Col> </Col> 
+    <Col md={8}><Route path = '/' exact component= {Profile} /> <Profile /> </Col>
     <Col md={3}> <SideBar /> </Col>
     </Row> 
   
