@@ -9,6 +9,7 @@ function App() {
       <Profile />
       <Footer />
     </div>
+
   );
 }
 
