@@ -1,36 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
 require("dotenv").config();
-import {
-  BrowserRouter as Router, Route} from 'react-router-dom';
-import { Container } from "react-bootstrap";
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import SideBar from './components/SideBar'
-import Profile from './components/Profile';
-
 
 function App() {
   return (
-    <>
-<Router >
-<Navbar />
-
-<Container >
-  <Row>  
-    
-    <Col md={9}><Route path = '/' exact component= {Profile} /> <Profile /> </Col>
-    <Col md={3}> <SideBar /> </Col>
-    </Row> 
-  
-   <Conainer />
-
-
-
-
-<Footer />
-</Router>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
