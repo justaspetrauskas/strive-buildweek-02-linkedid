@@ -80,6 +80,11 @@ input.navigation-search-input {
   line-height: 1.5;
   transition: all 500ms;
 }
+@media screen and (max-width: 853px) {
+  .navigation-link {
+    min-width: 48px;
+  }
+}
 .navigation-link:hover {
   color: rgba(0, 0, 0, 0.9);
   text-decoration: none;
@@ -110,4 +115,15 @@ button.navigation-link {
 .premium-link:hover {
   color: rgba(0, 0, 0, 0.9);
   text-decoration: underline;
+}
+button.search-btn {
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s;
+  cursor: pointer;
+  background: none;
+  border: none;
 }

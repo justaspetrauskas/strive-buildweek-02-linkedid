@@ -6,6 +6,7 @@ import { IoMdPeople } from "react-icons/io";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoNotificationsSharp } from "react-icons/io5";
+// import NavigationItem from "../components/NavigationItem";
 
 const Navigation = () => {
   return (
@@ -35,17 +36,26 @@ const Navigation = () => {
             </svg>
           </a>
           <div className="navigation-search">
-            <input
-              type="text"
-              placeholder="Search"
-              className="navigation-search-input d-xs-none d-lg-block"
-            />
-            <div className="search-icon">
-              <BsSearch size={"16"} />
+            <div className="d-none d-md-block">
+              <input
+                type="text"
+                placeholder="Search"
+                className="navigation-search-input "
+              />
+              <div className="search-icon">
+                <BsSearch size={"16"} />
+              </div>
             </div>
+            <button className="d-block d-md-none search-btn">
+              <div className="search-icon">
+                <BsSearch size={"16"} />
+              </div>
+            </button>
           </div>
           <nav className="navigation-items-wrapper">
             <ul className="navigation-items">
+              {/* is it possible to do something like this */}
+              {/* <NavigationItem render={<AiFillHome size={24} />} /> */}
               <li className="navigation-item">
                 <a href="" className="navigation-link">
                   <div className="link-icon">
@@ -53,7 +63,7 @@ const Navigation = () => {
                       <AiFillHome size={24} />
                     </span>
                   </div>
-                  <span className="link-text d-xs-none d-lg-block">Home</span>
+                  <span className="link-text d-none d-lg-block">Home</span>
                 </a>
               </li>
               <li className="navigation-item">
@@ -63,7 +73,7 @@ const Navigation = () => {
                       <IoMdPeople size={24} />
                     </span>
                   </div>
-                  <span className="link-text d-xs-none d-lg-block">
+                  <span className="link-text d-none d-lg-block">
                     My Network
                   </span>
                 </a>
@@ -75,7 +85,7 @@ const Navigation = () => {
                       <MdWork size={24} />
                     </span>
                   </div>
-                  <span className="link-text d-xs-none d-lg-block">Jobs</span>
+                  <span className="link-text d-none d-lg-block">Jobs</span>
                 </a>
               </li>
               <li className="navigation-item">
@@ -85,9 +95,7 @@ const Navigation = () => {
                       <RiMessage3Fill size={24} />
                     </span>
                   </div>
-                  <span className="link-text d-xs-none d-lg-block">
-                    Messaging
-                  </span>
+                  <span className="link-text d-none d-lg-block">Messaging</span>
                 </a>
               </li>
               <li className="navigation-item">
@@ -97,7 +105,7 @@ const Navigation = () => {
                       <IoNotificationsSharp size={24} />
                     </span>
                   </div>
-                  <span className="link-text d-xs-none d-lg-block">
+                  <span className="link-text d-none d-lg-block">
                     Notifications
                   </span>
                 </a>
@@ -107,7 +115,7 @@ const Navigation = () => {
                   <div className="link-icon link-personal-image ">
                     <img src="" alt="" />
                   </div>
-                  <span className="link-text text-personal d-xs-none d-lg-block">
+                  <span className="link-text text-personal d-none d-lg-block">
                     Me
                     <AiOutlineCaretDown />
                   </span>
@@ -120,7 +128,7 @@ const Navigation = () => {
                       <BsGrid3X3Gap size={24} />
                     </span>
                   </div>
-                  <span className="link-text text-personal d-xs-none d-lg-block">
+                  <span className="link-text text-personal d-none d-lg-block">
                     Work
                     <AiOutlineCaretDown />
                   </span>
@@ -128,7 +136,7 @@ const Navigation = () => {
               </li>
               <li className="navigation-item">
                 <a href="" className="navigation-link premium-link">
-                  <span className="link-text d-xs-none d-lg-block">
+                  <span className="link-text d-none d-lg-block">
                     Try Premium For Free
                   </span>
                 </a>
