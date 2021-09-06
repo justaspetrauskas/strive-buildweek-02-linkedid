@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       style={{ background: "#cfcfcf" }}
-      className="container fixed-bottom  text-dark text-start "
+      className="container text-dark text-start "
     >
       <Row
         style={{
