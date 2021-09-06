@@ -27,7 +27,7 @@ const Footer = () => {
         </ul>
       </Row>
       <Row>
-        <Col className="col-2">
+        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-2">
           <ul className="footer-ul">
             <li>About</li>
             <li>Community Guidelines</li>
@@ -36,7 +36,7 @@ const Footer = () => {
             <li>Safety Center</li>
           </ul>
         </Col>
-        <Col className="col-2">
+        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-2">
           <ul className="footer-ul">
             <li>Accessibility</li>
             <li>Careers</li>
@@ -44,7 +44,7 @@ const Footer = () => {
             <li>Mobile</li>
           </ul>
         </Col>
-        <Col className="col-2">
+        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-2">
           <ul className="footer-ul">
             <li>Talent Solutions</li>
             <li>Marketing Solutions</li>
@@ -52,7 +52,7 @@ const Footer = () => {
             <li>Small Bussiness</li>
           </ul>
         </Col>
-        <Col className="col-3">
+        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-3">
           <ul style={{ listStyleType: "none" }}>
             <li className="pb-3 ">
               <i class="bi bi-question-circle-fill pr-2"></i>Questions ?
@@ -69,10 +69,11 @@ const Footer = () => {
             </li>
           </ul>
         </Col>
-        <Col className="col-3">
+        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-3 w-100">
           <span className="small">Select Language</span>
           <DropdownButton
-            style={{ width: "auto" }}
+            id="dropdown-basic"
+            size="lg"
             variant="#cfcfcf"
             title="English(Uk)"
           >
