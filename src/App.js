@@ -1,14 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 require("dotenv").config();
-import {
-  BrowserRouter as Router, Route} from 'react-router-dom';
-import { Container } from "react-bootstrap";
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import SideBar from './components/SideBar'
-import Profile from './components/Profile';
-
 
 function App() {
   return (
@@ -24,10 +16,6 @@ function App() {
     </Row> 
   
    <Conainer />
-
-
-
-
 <Footer />
 </Router>
     </>
