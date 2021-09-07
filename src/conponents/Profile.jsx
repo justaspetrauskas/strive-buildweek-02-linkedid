@@ -345,15 +345,19 @@ const Profile = () => {
                   />
                 </Col>
                 <Col xs className="col-8">
-                  <h5>Django Developer</h5>
+                  <h5>{userInfo[1]?.role}</h5>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    Possibility Technologies . Full-Time
+                    {userInfo[1]?.company}
                   </p>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    sep 2020 - jan 2021 : 5 mnts
+                    sep 2020 - {userInfo[1]?.endDate}
                   </p>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    Hyderabad,India
+                    {userInfo[1]?.area}
+                  </p>
+                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                    {userInfo[1]?.description}
+                    <hr />
                   </p>
                 </Col>
                 <Col xs className="col-2">
