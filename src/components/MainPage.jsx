@@ -6,11 +6,11 @@ const MainPage = () => {
   return (
     <Container>
       <Row>
-        <Col md={9}>
+        <Col md={9} className='mt-4'>
           <ProfileJumbo />
         </Col>
-        <Col md={3}>
-          <Sideprofile />
+        <Col md={3} className='mt-5'>
+          <Sideprofile /> 
         </Col>
       </Row>
     </Container>
