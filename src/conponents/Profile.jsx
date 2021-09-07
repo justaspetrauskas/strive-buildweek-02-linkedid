@@ -11,14 +11,23 @@ const Profile = () => {
         "https://striveschool-api.herokuapp.com/api/profile/61377a00b01b0d0015166929/experiences",
         {
           headers: {
-            Authentication:
+            Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM3N2EwMGIwMWIwZDAwMTUxNjY5MjkiLCJpYXQiOjE2MzEwMjU2NjQsImV4cCI6MTYzMjIzNTI2NH0.tzYR2FdP6RUgYJhUuHg4jdc95xzSTytWW0KsAg_89x8",
           },
         }
       );
+
       try {
-      } catch (error) {}
+        if (responce.ok) {
+          const data = await responce.json();
+          setUserInfo(data);
+          console.log("userInfo------->", data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     };
+    fetchData();
   }, []);
   return (
     <Container style={{ background: "#cfcfcf" }}>
@@ -303,17 +312,18 @@ const Profile = () => {
                   />
                 </Col>
                 <Col xs className="col-8">
-                  <h5>Web Developer</h5>
+                  <h5>{userInfo[0]?.role}</h5>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    Upwork Freelance
+                    {userInfo[0]?.company}
                   </p>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    Jan 2021 – Present : 9 mnts
+                    Jan 2021 – {userInfo[0]?.endDate}
                   </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>India</p>
                   <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    I’m a full stack web developer can able to code front and
-                    back end parts of website.
+                    {userInfo[0]?.area}
+                  </p>
+                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                    {userInfo[0]?.description}
                     <hr />
                   </p>
                 </Col>
