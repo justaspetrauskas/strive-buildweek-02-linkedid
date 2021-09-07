@@ -7,9 +7,8 @@ function App() {
   return (
     <div>
       <Profile />
-      <Footer />
+      {/* <Footer /> */}
     </div>
-
   );
 }
 
