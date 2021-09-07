@@ -1,34 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
-
+import Activity from "./Activity";
+import Experience from "./Experience";
+import Dashboard from "./Dashboard";
 const Profile = () => {
-  const [userInfo, setUserInfo] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const responce = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/61377a00b01b0d0015166929/experiences",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM3N2EwMGIwMWIwZDAwMTUxNjY5MjkiLCJpYXQiOjE2MzEwMjU2NjQsImV4cCI6MTYzMjIzNTI2NH0.tzYR2FdP6RUgYJhUuHg4jdc95xzSTytWW0KsAg_89x8",
-          },
-        }
-      );
-
-      try {
-        if (responce.ok) {
-          const data = await responce.json();
-          setUserInfo(data);
-          console.log("userInfo------->", data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
   return (
     <Container style={{ background: "#cfcfcf" }}>
       <Row>
@@ -116,68 +92,6 @@ const Profile = () => {
               </Row>
             </Card.Body>
           </Card>
-          {/* //Card 2(DashBoard) */}
-          <br />
-          <Card border="#575551" style={{ background: "#98a8b4" }}>
-            <Card.Body>
-              <Row pill bg="primary" border="#575551" className="px-4 m-0">
-                <Col className="col-10">
-                  <h5>Your Dashboard</h5>
-                  <span>Private to you</span>
-                </Col>
-                <Col className="col-2">
-                  <p>
-                    <i class="bi bi-star"></i>
-                    All Star
-                  </p>
-                </Col>
-              </Row>
-              <br />
-              <Row className="">
-                <Col sm style={{ background: "white", margin: "1px" }}>
-                  <h1 style={{ fontSize: "28px", color: "#3a5599" }}>150</h1>
-                  <p className="small text-dark">Who Viewed Your Profile</p>
-                </Col>
-                <Col sm style={{ background: "white", margin: "1px" }}>
-                  <h1 style={{ fontSize: "28px", color: "#3a5599" }}>50</h1>
-                  <p className="small text-dark">Post Views</p>
-                </Col>
-                <Col sm style={{ background: "white", margin: "1px" }}>
-                  <h1 style={{ fontSize: "28px", color: "#3a5599" }}>35</h1>
-                  <p className="small text-dark">Search appearances</p>
-                </Col>
-              </Row>
-
-              <br />
-              <Row>
-                <Col className="col-12">
-                  <ListGroup>
-                    <ListGroup.Item>
-                      <i class="bi bi-wifi"></i> <span>Creator mode :</span>Off
-                      <p className="small">
-                        Grow your audience and get discovered by highlighting
-                        content on your profile.
-                      </p>
-                    </ListGroup.Item>
-
-                    <ListGroup.Item>
-                      <i class="bi bi-people-fill"></i> Dapibus ac facilisis in
-                      <p className="small">
-                        Manage your connections, events, and interests.
-                      </p>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      <i class="bi bi-bookmark-fill"></i> My Teams
-                      <p className="small">
-                        Keep track of your jobs, courses and articles.
-                      </p>
-                    </ListGroup.Item>
-                  </ListGroup>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-          <br />
           {/* //Card3(About) */}
           <Card>
             <Card.Body>
@@ -201,172 +115,14 @@ const Profile = () => {
               </Row>
             </Card.Body>
           </Card>
-          {/* //Card4(Activity) */}
-          <br />
-          <Card>
-            <Card.Body>
-              <Row>
-                <Col xs className="col-6">
-                  <h5>Activity</h5>
-                  <h5 style={{ fontSize: "15px", color: "#3a5599" }}>
-                    101 Followers
-                  </h5>
-                  <Row style={{ maeginBottom: "30px" }}>
-                    <Col xs className="col-4 ">
-                      <img
-                        class="rounded-circle"
-                        src="https://media-exp1.licdn.com/dms/image/C5603AQGhp9AGnNzl6Q/profile-displayphoto-shrink_100_100/0/1517866361123?e=1635379200&v=beta&t=wpzWpKHGBMm0GVrFOyfQDrnjqao7tMLCVXEY1GJlmuk"
-                        alt=""
-                        style={{
-                          width: "60px",
-                          height: "60px",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Col>
-                    <Col xs className=" p-0">
-                      <h5>Congrats!</h5>
-                      <p style={{ fontSize: "15px" }}>Vinaykumar commented</p>
-                    </Col>
-                  </Row>
-                </Col>
 
-                <br />
-                <Col xs>
-                  <Row style={{ marginTop: "50px" }}>
-                    <Col xs className="col-4 ">
-                      <img
-                        class="rounded-square"
-                        src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-                        alt=""
-                        style={{
-                          width: "80px",
-                          height: "60px",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Col>
-                    <Col xs className=" p-0">
-                      <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
-                      <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                        Vinaykumar Shared this
-                      </p>
-                      <p style={{ fontSize: "11px", paddingTop: "0px" }}>
-                        20 Reactions
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Row>
-                  <Col style={{ paddingLeft: "20px" }} xs className="col-3">
-                    <img
-                      class="rounded-square"
-                      src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-                      alt=""
-                      style={{
-                        width: "80px",
-                        height: "60px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </Col>
-                  <Col xs className="col-8 p-0">
-                    <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
-                    <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                      Vinaykumar Shared this
-                    </p>
-                    <p style={{ fontSize: "11px", paddingTop: "0px" }}>
-                      20 Reactions
-                    </p>
-                  </Col>
-                </Row>
-              </Row>
-              <hr />
-              <p className="text-center">See all Activity</p>
-            </Card.Body>
-          </Card>
           <br />
-          {/* //Card 5 (Experiance) */}
-          <Card>
-            <Card.Body>
-              <Row>
-                <Col xs>
-                  <h5>Experience</h5>
-                </Col>
-                <Col xs className="col-2">
-                  <i class="bi bi-plus-lg"></i>
-                </Col>
-              </Row>
-              <br />
-              <Row>
-                <Col xs>
-                  <img
-                    class="rounded-square"
-                    src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-                    alt=""
-                    style={{
-                      width: "80px",
-                      height: "60px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Col>
-                <Col xs className="col-8">
-                  <h5>{userInfo[0]?.role}</h5>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[0]?.company}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    Jan 2021 – {userInfo[0]?.endDate}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[0]?.area}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[0]?.description}
-                    <hr />
-                  </p>
-                </Col>
-                <Col xs className="col-2">
-                  <i class="bi bi-pencil-fill"></i>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs>
-                  <img
-                    class="rounded-square"
-                    src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-                    alt=""
-                    style={{
-                      width: "80px",
-                      height: "60px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Col>
-                <Col xs className="col-8">
-                  <h5>{userInfo[1]?.role}</h5>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[1]?.company}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    sep 2020 - {userInfo[1]?.endDate}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[1]?.area}
-                  </p>
-                  <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                    {userInfo[1]?.description}
-                    <hr />
-                  </p>
-                </Col>
-                <Col xs className="col-2">
-                  <i class="bi bi-pencil-fill"></i>
-                </Col>
-              </Row>
-              <hr />
-            </Card.Body>
-          </Card>
+          <Dashboard />
+
+          <br />
+          <Activity />
+          <br />
+          <Experience />
         </Col>
       </Row>
     </Container>
