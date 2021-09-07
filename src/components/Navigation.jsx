@@ -7,6 +7,7 @@ import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoNotificationsSharp } from "react-icons/io5";
 // import NavigationItem from "../components/NavigationItem";
+import SearchProfile from "./SearchProfile";
 
 const Navigation = () => {
   return (
@@ -35,23 +36,9 @@ const Navigation = () => {
               />
             </svg>
           </a>
-          <div className="navigation-search">
-            <div className="d-none d-md-block">
-              <input
-                type="text"
-                placeholder="Search"
-                className="navigation-search-input "
-              />
-              <div className="search-icon">
-                <BsSearch size={"16"} />
-              </div>
-            </div>
-            <button className="d-block d-md-none search-btn">
-              <div className="search-icon">
-                <BsSearch size={"16"} />
-              </div>
-            </button>
-          </div>
+          {/* search */}
+          <SearchProfile />
+
           <nav className="navigation-items-wrapper">
             <ul className="navigation-items">
               {/* is it possible to do something like this */}
