@@ -35,7 +35,12 @@ const Experience = () => {
             <h5>Experience</h5>
           </Col>
           <Col xs className="col-2">
-            <i classclass="bi bi-plus-lg"></i>
+            <a href="">
+              <i
+                onClick={() => console.log("clicked")}
+                class="bi bi-plus-lg"
+              ></i>
+            </a>
           </Col>
         </Row>
         <br />
