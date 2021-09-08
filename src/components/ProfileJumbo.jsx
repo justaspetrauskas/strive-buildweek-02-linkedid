@@ -1,9 +1,17 @@
 import "../style/ProfileJumbo.css";
 import React from "react";
-import { Container, Carousel, Card } from "react-bootstrap";
-// import TestCarousel from "./TestCarousel";
-import { Link } from "react-router-dom";
 
+import {
+  Container,
+  Carousel,
+  Card,
+  Modal,
+  Col,
+  Row,
+  Button,
+} from "react-bootstrap";
+
+import { Link } from "react-router-dom";
 import { FetchMe } from "../functions/FetchMe";
 
 class ProfileJumbo extends React.Component {
@@ -11,6 +19,10 @@ class ProfileJumbo extends React.Component {
     name: null,
     surname: null,
     loading: true,
+
+    show: false,
+
+
   };
 
   componentDidMount = async () => {
@@ -22,6 +34,11 @@ class ProfileJumbo extends React.Component {
       console.log(error);
     }
   };
+
+
+  handleClose = () => this.setState({ show: false });
+  handleShow = () => this.setState({ show: true });
+
 
   render() {
     return (
@@ -41,11 +58,39 @@ class ProfileJumbo extends React.Component {
               src={this.state.loading ? "loading" : this.state.user.image}
               className="profil-rounded-img"
               style={{ height: "10rem" }}
+              onClick={this.handleShow}
             />
           </div>
 
+          <Modal id="modal" show={this.state.show} onHide={this.handleClose}>
+            {/* <Modal.Header closeButton>
+            
+          </Modal.Header> */}
+            <Modal.Body>
+              <h3>
+                Profile photo
+                <Button variant="secondary" onClick={this.handleClose}>
+                  X
+                </Button>
+              </h3>
+
+              <img
+                id="modalPic"
+                src={this.state.loading ? "loading" : this.state.user.image}
+                className="profil-rounded-img"
+                style={{ height: "15rem", width: "15rem" }}
+                onClick={this.handleShow}
+              />
+            </Modal.Body>
+            <Modal.Footer></Modal.Footer>
+          </Modal>
+
           <div className="d-flex justify-content-between ">
             <div className="personal-info  pb-3">
+
+              <div></div>
+
+
               <h2>
                 {this.state.loading ? "loading" : this.state.user.name}
                 <span> </span>

@@ -181,3 +181,16 @@ span.carousel-control-prev-icon {
   > div {
   border: none;
 }
+#modal {
+  color: #e6e6e6;
+}
+#modalPic {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+#modal > div > div.modal-header {
+  background-color: #191919;
+}
+#modal > div > div.modal-body {
+  background-color: #191919;
+}
