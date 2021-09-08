@@ -2,7 +2,7 @@ import { BsSearch } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-import { AsyncTypeahead } from "react-bootstrap-typeahead";
+
 import { Fragment } from "react";
 
 const SearchProfile = () => {
@@ -67,7 +67,7 @@ const SearchProfile = () => {
           placeholder="Search"
           value={query}
           onChange={(e) => onChangeHandler(e.target.value)}
-          // onClick={handleShow}
+        // onClick={handleShow}
         />
         {suggestions.length > 0 && (
           <>

@@ -78,17 +78,19 @@ class Sideprofile extends Component {
                                             <div className="d-flex p-3">
                                                 <Card.Img variant="bottom" src={profile.image} className="profile-img" />
                                                 <a href="">
-                                                    <Card.Title>
+                                                    <Card.Title className="profile-info">
                                                         <small><bold>{profile.name} {profile.surname}<br />
 
                                                             <span className="profile-title">  {profile.title}</span>  </bold></small></Card.Title>
-                                                </a>
-                                            </div>
+
+                                                </a></div>
+
                                             <Button
                                                 className="button1"
                                                 variant="light">Connect</Button>
 
                                         </Card.Body>
+
 
                                     </>
                                 )
