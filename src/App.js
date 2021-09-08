@@ -14,7 +14,7 @@ import MainFeed from "./components/MainFeed";
 
 function App() {
   return (
-    <div>
+    <div className="main-wrapper">
       <Router>
         <Navigation />
         <Route path="/" exact component={MainPage} />

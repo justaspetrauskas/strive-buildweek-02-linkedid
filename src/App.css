@@ -1,3 +1,6 @@
+.main-wrapper {
+  background-color: #f3f2ef;
+}
 .App {
   text-align: center;
 }
@@ -36,14 +39,14 @@
     transform: rotate(360deg);
   }
 }
-.settings{
+.settings {
   position: absolute;
   margin-top: 20px;
-right: 0;
-height: 120px;
-border-radius: 50%;
+  right: 0;
+  height: 120px;
+  border-radius: 50%;
 }
-.bi{
+.bi {
   position: absolute;
   right: 0;
 }
