@@ -1,10 +1,10 @@
-import { Row, Col, Container, DropdownButton, Dropdown } from "react-bootstrap";
+import { Row, Col, DropdownButton, Dropdown } from "react-bootstrap";
 import "./style/Footer.css";
 const Footer = () => {
   return (
     <footer
       style={{ background: "#cfcfcf" }}
-      className="container fixed-bottom  text-dark text-start "
+      className="container   text-dark text-start "
     >
       <Row
         style={{
@@ -57,13 +57,13 @@ const Footer = () => {
         <Col xs={12} sm={6} md={3} lg={3} xl={3} className="col-3">
           <ul style={{ listStyleType: "none" }}>
             <li className="pb-3 ">
-              <i class="bi bi-question-circle-fill pr-2"></i>Questions ?
+              <i className="bi bi-question-circle-fill pr-2"></i>Questions ?
               <span>
                 <li className="small">Visit Our Help Center</li>{" "}
               </span>
             </li>
             <li>
-              <i class="bi bi-gear-fill pr-2"></i>
+              <i className="bi bi-gear-fill pr-2"></i>
               Manage your Account and Privacy
               <span>
                 <li className="small">Go to Your Settings</li>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 const Experience = () => {
   const [userInfo, setUserInfo] = useState([]);
 
@@ -35,14 +35,14 @@ const Experience = () => {
             <h5>Experience</h5>
           </Col>
           <Col xs className="col-2">
-            <i class="bi bi-plus-lg"></i>
+            <i classclass="bi bi-plus-lg"></i>
           </Col>
         </Row>
         <br />
         <Row>
           <Col xs>
             <img
-              class="rounded-square"
+              className="rounded-square"
               src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
               alt=""
               style={{
@@ -69,13 +69,13 @@ const Experience = () => {
             </p>
           </Col>
           <Col xs className="col-2">
-            <i class="bi bi-pencil-fill"></i>
+            <i className="bi bi-pencil-fill"></i>
           </Col>
         </Row>
         <Row>
           <Col xs>
             <img
-              class="rounded-square"
+              className="rounded-square"
               src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
               alt=""
               style={{
@@ -102,7 +102,7 @@ const Experience = () => {
             </p>
           </Col>
           <Col xs className="col-2">
-            <i class="bi bi-pencil-fill"></i>
+            <i className="bi bi-pencil-fill"></i>
           </Col>
         </Row>
         <hr />

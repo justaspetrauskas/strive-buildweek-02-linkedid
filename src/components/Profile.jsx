@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import Activity from "./Activity";
 import Experience from "./Experience";
 import Dashboard from "./Dashboard";
@@ -93,7 +91,7 @@ const Profile = () => {
             </Card.Body>
           </Card>
           {/* //Card3(About) */}
-          <Card>
+          {/* <Card>
             <Card.Body>
               <Row>
                 <Col xs className="col-10">
@@ -114,7 +112,7 @@ const Profile = () => {
                 </Col>
               </Row>
             </Card.Body>
-          </Card>
+          </Card> */}
 
           <br />
           <Dashboard />

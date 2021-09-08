@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 const Activity = () => {
   return (
     <Card>
@@ -12,7 +12,7 @@ const Activity = () => {
             <Row style={{ maeginBottom: "30px" }}>
               <Col xs className="col-4 ">
                 <img
-                  class="rounded-circle"
+                  className="rounded-circle"
                   src="https://media-exp1.licdn.com/dms/image/C5603AQGhp9AGnNzl6Q/profile-displayphoto-shrink_100_100/0/1517866361123?e=1635379200&v=beta&t=wpzWpKHGBMm0GVrFOyfQDrnjqao7tMLCVXEY1GJlmuk"
                   alt=""
                   style={{
@@ -34,7 +34,7 @@ const Activity = () => {
             <Row style={{ marginTop: "50px" }}>
               <Col xs className="col-4 ">
                 <img
-                  class="rounded-square"
+                  className="rounded-square"
                   src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
                   alt=""
                   style={{
@@ -58,7 +58,7 @@ const Activity = () => {
           <Row>
             <Col style={{ paddingLeft: "20px" }} xs className="col-3">
               <img
-                class="rounded-square"
+                className="rounded-square"
                 src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
                 alt=""
                 style={{
