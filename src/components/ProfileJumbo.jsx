@@ -1,5 +1,6 @@
 import "../style/ProfileJumbo.css";
 import React from "react";
+
 import {
   Container,
   Carousel,
@@ -9,6 +10,7 @@ import {
   Row,
   Button,
 } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 import { FetchMe } from "../functions/FetchMe";
 
@@ -17,7 +19,10 @@ class ProfileJumbo extends React.Component {
     name: null,
     surname: null,
     loading: true,
+
     show: false,
+
+
   };
 
   componentDidMount = async () => {
@@ -30,8 +35,10 @@ class ProfileJumbo extends React.Component {
     }
   };
 
+
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
+
 
   render() {
     return (
@@ -80,7 +87,10 @@ class ProfileJumbo extends React.Component {
 
           <div className="d-flex justify-content-between ">
             <div className="personal-info  pb-3">
+
               <div></div>
+
+
               <h2>
                 {this.state.loading ? "loading" : this.state.user.name}
                 <span> </span>

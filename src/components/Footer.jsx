@@ -54,16 +54,16 @@ const Footer = () => {
             <li>Small Bussiness</li>
           </ul>
         </Col>
-        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-3">
+        <Col xs={12} sm={6} md={3} lg={3} xl={3} className="col-3">
           <ul style={{ listStyleType: "none" }}>
             <li className="pb-3 ">
-              <i class="bi bi-question-circle-fill pr-2"></i>Questions ?
+              <i className="bi bi-question-circle-fill pr-2"></i>Questions ?
               <span>
                 <li className="small">Visit Our Help Center</li>{" "}
               </span>
             </li>
             <li>
-              <i class="bi bi-gear-fill pr-2"></i>
+              <i className="bi bi-gear-fill pr-2"></i>
               Manage your Account and Privacy
               <span>
                 <li className="small">Go to Your Settings</li>
@@ -71,7 +71,7 @@ const Footer = () => {
             </li>
           </ul>
         </Col>
-        <Col xs={12} sm={6} md={2} lg={2} xl={2} className="col-3 w-100">
+        <Col xs={12} sm={6} md={3} lg={3} xl={3} className="col-3 w-100">
           <span className="small">Select Language</span>
           <DropdownButton
             id="dropdown-basic"

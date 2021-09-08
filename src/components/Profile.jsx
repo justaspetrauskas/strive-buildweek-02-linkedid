@@ -1,18 +1,21 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-
+import Activity from "./Activity";
+import Experience from "./Experience";
+import Dashboard from "./Dashboard";
 const Profile = () => {
   return (
     <Container style={{ background: "#cfcfcf" }}>
       <Row>
         <Col className="col-8 p-0">
-          <Card>
+          {/* //Card1 */}
+          <Card border="#575551">
             <Card.Img
               variant="top"
               src="https://media-exp1.licdn.com/dms/image/C5616AQGdYfRpzGqAwQ/profile-displaybackgroundimage-shrink_350_1400/0/1517866361803?e=1636588800&v=beta&t=5EI7j1zQHutematrk_wLkVWHv2T6XhDgEqLZw7TvfuI"
             />
             <Card.Body>
               <Row>
-                <Col className="col-6 p-0">
+                <Col className="col-6 ">
                   <ul>
                     <li
                       style={{ listStyleType: "none" }}
@@ -42,7 +45,7 @@ const Profile = () => {
                     </div>
                   </ul>
                 </Col>
-                <Col className="col-4 text-end">
+                <Col className="col-6 text-end">
                   <ul>
                     <li
                       style={{
@@ -85,11 +88,39 @@ const Profile = () => {
                   </ul>
                 </Col>
               </Row>
-
-              <Card.Title></Card.Title>
-              <Card.Text></Card.Text>
             </Card.Body>
           </Card>
+          {/* //Card3(About) */}
+          {/* <Card>
+            <Card.Body>
+              <Row>
+                <Col xs className="col-10">
+                  <h5>About</h5>
+                </Col>
+                <Col xs className="col-2">
+                  <i class="bi bi-pencil-fill"></i>
+                </Col>
+                <br />
+                <Col xs>
+                  <p>
+                    I'm a python developer with two years of experience in
+                    developing web applications using python and Django, since I
+                    am a student of university, pursuing masters in computer
+                    science actively looking for internships/full-time jobs to
+                    become professional in python /Django
+                  </p>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card> */}
+
+          <br />
+          <Dashboard />
+
+          <br />
+          <Activity />
+          <br />
+          <Experience />
         </Col>
       </Row>
     </Container>
