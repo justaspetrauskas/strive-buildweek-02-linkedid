@@ -22,7 +22,7 @@ const ExperienceModal = () => {
               <p>Employment Type</p>
               <Dropdown id="btn-size">
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  -
+                  -  -
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>

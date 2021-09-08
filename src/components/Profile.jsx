@@ -9,7 +9,7 @@ const Profile = () => {
         <Col className="col-8 p-0">
           {/* //Card1 */}
           {/* <Card border="#575551">
-            <Card.Img
+            <Card.Img className=''
               variant="top"
               src="https://media-exp1.licdn.com/dms/image/C5616AQGdYfRpzGqAwQ/profile-displaybackgroundimage-shrink_350_1400/0/1517866361803?e=1636588800&v=beta&t=5EI7j1zQHutematrk_wLkVWHv2T6XhDgEqLZw7TvfuI"
             />

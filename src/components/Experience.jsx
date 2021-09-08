@@ -19,7 +19,7 @@ const Experience = () => {
         if (responce.ok) {
           const data = await responce.json();
           setUserInfo(data);
-          console.log("userInfo------->", data);
+          console.log("userInfo-------->", data);
         }
       } catch (error) {
         console.log(error);

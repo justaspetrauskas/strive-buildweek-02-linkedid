@@ -25,7 +25,7 @@
 //                       marginBottom: "50px",
 //                     }}
 //                     src="https://media-exp1.licdn.com/dms/image/C5616AQGdYfRpzGqAwQ/profile-displaybackgroundimage-shrink_350_1400/0/1517866361803?e=1636588800&v=beta&t=5EI7j1zQHutematrk_wLkVWHv2T6XhDgEqLZw7TvfuI"
-//                     alt=""
+//                     alt="."
 //                   />
 //                 </Col>
 //                 <Col className="col-12 col-sm-12 col-md-12 col-lg-12 text-center small ">
