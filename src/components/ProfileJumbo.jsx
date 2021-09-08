@@ -1,7 +1,7 @@
 import "../style/ProfileJumbo.css";
 import React from "react";
 import { Container, Carousel, Card } from "react-bootstrap";
-import TestCarousel from "./TestCarousel";
+// import TestCarousel from "./TestCarousel";
 import { Link } from "react-router-dom";
 
 import { FetchMe } from "../functions/FetchMe";
@@ -9,21 +9,20 @@ import { FetchMe } from "../functions/FetchMe";
 class ProfileJumbo extends React.Component {
   state = {
     name: null,
-    surname:null, 
-    loading : true,
+    surname: null,
+    loading: true,
   };
 
   componentDidMount = async () => {
     try {
       const user = await FetchMe();
-      this.setState({user,loading:false});
-      console.log("success", user.name); 
+      this.setState({ user, loading: false });
+      console.log("success", user.name);
     } catch (error) {
       console.log(error);
     }
   };
 
- 
   render() {
     return (
       <div className="profile-main border mb-3 mt-4">
@@ -47,20 +46,25 @@ class ProfileJumbo extends React.Component {
 
           <div className="d-flex justify-content-between ">
             <div className="personal-info  pb-3">
-              <h2>                
-                {this.state.loading ? "loading" : this.state.user.name  }  
+              <h2>
+                {this.state.loading ? "loading" : this.state.user.name}
                 <span> </span>
                 {this.state.loading ? "loading" : this.state.user.surname}
-               
               </h2>
 
-              <p>{this.state.loading ? "loading" : this.state.user.title} </p><div>  {this.state.loading ? "loading" : this.state.user.area  }</div> 
+              <p>{this.state.loading ? "loading" : this.state.user.title} </p>
+              <div>
+                {" "}
+                {this.state.loading ? "loading" : this.state.user.area}
+              </div>
 
               <p className="text-muted personal-info-text ">
-              {this.state.loading ? "loading" : this.state.user.bio}
+                {this.state.loading ? "loading" : this.state.user.bio}
               </p>
               <div className="d-flex">
-                <p className=" text-muted personal-info-text">{this.state.loading ? "loading" : this.state.user.email}</p>
+                <p className=" text-muted personal-info-text">
+                  {this.state.loading ? "loading" : this.state.user.email}
+                </p>
 
                 <p className="ml-2">
                   <a className=" personal-text-color " href="/">
@@ -94,20 +98,25 @@ class ProfileJumbo extends React.Component {
           <div className="caro">
             <Carousel>
               <Carousel.Item>
-                <Card.Body className="carousel-card">Show recruiters you're open to work - you control who sees this.  Get started  </Card.Body>
+                <Card.Body className="carousel-card">
+                  Show recruiters you're open to work - you control who sees
+                  this. Get started{" "}
+                </Card.Body>
               </Carousel.Item>
               <Carousel.Item>
                 <Card>
-                  <Card.Body className="carousel-card">Share that you’re hiring and attract qualified candidates.
-
-Get started</Card.Body>
+                  <Card.Body className="carousel-card">
+                    Share that you’re hiring and attract qualified candidates.
+                    Get started
+                  </Card.Body>
                 </Card>
               </Carousel.Item>
               <Carousel.Item>
                 <Card>
-                  <Card.Body className="carousel-card">Find potential clients by showcasing the services you provide.
-
-Get started</Card.Body>
+                  <Card.Body className="carousel-card">
+                    Find potential clients by showcasing the services you
+                    provide. Get started
+                  </Card.Body>
                 </Card>
               </Carousel.Item>
             </Carousel>
