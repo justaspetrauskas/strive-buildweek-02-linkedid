@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import ExperienceModal from "./ExperienceModal";
-import Single from "./SIngleExperience";
+import Single from "./SingleExperience";
 const Experience = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [isModalPost, setIsModalPost] = useState(false);
