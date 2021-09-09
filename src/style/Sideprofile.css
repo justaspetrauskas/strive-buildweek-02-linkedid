@@ -57,4 +57,9 @@ color: rgb(93, 93, 93);
     align-items: center;
     align-content: center;
     margin-left: 95px;
+    margin-top: -15px;
+    color: gray;
+}
+hr{
+    margin-top: -15px;
 }
