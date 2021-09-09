@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-import "../style/MainFeed.css";
+// import "../style/MainFeed.css";
 
 import SinglePostCard from "./SinglePostCard";
 
@@ -35,28 +35,18 @@ const MainFeed = () => {
   }, []);
 
   return (
-    <Container className="main-feed-container">
-      <Row className="test">
-        <Col md={2} className="d-none d-lg-block profile">
-          <div>This is a test for profile</div>
-        </Col>
-        <Col md={7} xs={12} className="main-feed">
-          {posts.length > 0 && (
-            <>
-              {posts
-                .slice(0, 25)
-                .reverse()
-                .map((post, i) => (
-                  <SinglePostCard index={i} post={post} />
-                ))}
-            </>
-          )}
-        </Col>
-        <Col md={3} className="d-none d-lg-block aside">
-          <div> this is a test for the side container</div>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      {posts.length > 0 && (
+        <>
+          {posts
+            .slice(0, 25)
+            .reverse()
+            .map((post, i) => (
+              <SinglePostCard index={i} post={post} />
+            ))}
+        </>
+      )}
+    </>
   );
 };
 export default MainFeed;

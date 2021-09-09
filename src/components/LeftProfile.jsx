@@ -1,4 +1,4 @@
-import "../style/LeftProfile.css";
+// import "../style/LeftProfile.css";
 import { FcEngineering } from "react-icons/fc";
 import { FaBookmark } from "react-icons/fa";
 import { FetchMe } from "../functions/FetchMe";
@@ -28,7 +28,7 @@ class LeftProfile extends React.Component {
   render() {
     return (
       <>
-        <div id="profile-home-div" className="overflow-hidden border mt-5">
+        <div id="profile-home-div" className="overflow-hidden border">
           <div
             className="position-relative"
             style={{

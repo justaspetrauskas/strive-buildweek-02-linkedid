@@ -1,6 +1,8 @@
 #BigBox {
   height: 150px;
   border-radius: 10px;
+  background-color: #fff;
+  border-radius: 0.6rem;
 }
 
 .img-fluid-post {
