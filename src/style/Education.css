@@ -1,0 +1,118 @@
+#experience-education-div {
+  border-radius: 10px;
+}
+
+#experience-education-div header {
+  display: flex;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+#experience-education-div h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+#experience-education-div .image-div {
+  position: absolute;
+}
+#experience-education-div .Ex-image {
+  position: absolute;
+  left: -35px;
+  top: 17%;
+}
+#experience-education-div .Ex-info {
+  margin-left: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+#experience-education-div .Ex-largest {
+  padding: 20px;
+}
+
+#experience-education-div li {
+  list-style: none;
+}
+#experience-education-div .Ex-pencil {
+  justify-content: right;
+  font-size: 15px;
+}
+#experience-education-div .Ex-burger {
+  position: relative;
+  top: 36px;
+  opacity: 0;
+}
+#experience-education-div .Ex-largest:hover .Ex-burger {
+  opacity: 1;
+}
+
+/* add button */
+#experience-education-div .change-icons {
+  font-size: 25px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#experience-education-div .change-icons:hover {
+  background-color: #ebebeb;
+}
+
+#experience-education-div .Ed-image {
+  position: absolute;
+  left: -35px;
+  top: 17%;
+  width: 65px;
+}
+#experience-education-div .Ed-largest {
+  padding: 0px;
+}
+#experience-education-div .Ed-info {
+  margin-left: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+#experience-education-div .allContainer {
+  display: flex;
+}
+#experience-education-div .Ed-burger {
+  position: relative;
+  opacity: 0;
+  top: 36px;
+}
+#experience-education-div .Ed-largest:hover .Ed-burger {
+  opacity: 1;
+}
+#experience-education-div a {
+  color: black;
+  text-decoration: none;
+}
+#experience-education-div a:hover {
+  color: black;
+  text-decoration: underline blue 1px;
+}
+
+#experience-education-div .infoContainer {
+  display: flex;
+  flex: 1;
+}
+#experience-education-div .icons {
+  display: flex;
+  flex-direction: column;
+}
+#experience-education-div li::after {
+  content: "";
+  display: block;
+  border-bottom: (3px solid black);
+  margin-left: 100px;
+}
+h3.edu {
+  font-size: 20px;
+  padding-top: 5px;
+}

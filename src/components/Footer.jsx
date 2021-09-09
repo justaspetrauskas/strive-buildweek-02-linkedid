@@ -1,11 +1,8 @@
-import { Row, Col, DropdownButton, Dropdown } from "react-bootstrap";
-import "./style/Footer.css";
+import { Row, Col, Container, DropdownButton, Dropdown } from "react-bootstrap";
+import "../style/Footer.css";
 const Footer = () => {
   return (
-    <footer
-      style={{ background: "#cfcfcf" }}
-      className="container   text-dark text-start "
-    >
+    <footer className="container text-dark text-start ">
       <Row
         style={{
           margin: "0px",

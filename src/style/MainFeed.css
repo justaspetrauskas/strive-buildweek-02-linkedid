@@ -1,0 +1,265 @@
+.feed-post-card {
+  border-radius: 0.6rem;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.feed-post-header {
+  margin: 0 16px;
+  padding: 12px 48px 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 36px;
+}
+button.post-header-btn {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  border: none;
+  background-color: transparent;
+  height: 2.4rem;
+  width: 2.4rem;
+  min-width: auto;
+  border-radius: 50%;
+  transition: background-color 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+button.post-header-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+button.post-header-btn svg {
+  fill: rgba(0, 0, 0, 0.6);
+}
+.feed-post-profile {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 12px 16px 0;
+  margin-bottom: 8px;
+}
+
+.post-profile-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.post-profile-avatar img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+.feed-post-profile span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.post-user-name {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.post-user-title {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.post-user-created {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.post-profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  overflow: hidden;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.post-content {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-weight: 400;
+}
+.main-feed-container {
+  padding-top: 106px;
+}
+.post-content {
+  margin: 0 16px 0 16px;
+}
+.social-media-reactions {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.social-media-reactions li,
+.social-media-actions li {
+  list-style: none;
+}
+.social-media-actions {
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+.social-media-action {
+  background-color: transparent;
+  border: none;
+  padding: 1rem 1.4rem;
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 5.6rem;
+  max-width: 480px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.social-media-action:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+.social-media-action svg {
+  margin-right: 4px;
+}
+.social-media-action span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+.social-media-action svg,
+.social-media-action span {
+  fill: rgba(0, 0, 0, 0.6);
+}
+
+button.like-btn {
+  position: relative;
+  overflow: visible;
+}
+.like-btn-inner {
+  position: absolute;
+  bottom: 95%;
+  left: -30px;
+  padding-bottom: 15px;
+}
+button.like-btn:hover .reaction-box {
+  display: block;
+}
+.reaction-box {
+  list-style-type: none;
+  margin: 0;
+  display: none;
+  padding: 0 5px;
+  border-radius: 150px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.reaction-box ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.reaction-box li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  transform: scale(0.8) translateY(0);
+  transition: transform 200ms ease;
+  position: relative;
+}
+.reaction-box li.like {
+  background: url("https://www.userflow.nl/images/Linkedin-Like-Icon-Thumbup250.png")
+    no-repeat;
+  background-size: 70%;
+  background-position: 10px 5px;
+}
+.reaction-box li.celebrate {
+  background: url("https://www.userflow.nl/images/Linkedin-Celebrate-Icon-ClappingHands250.png")
+    no-repeat;
+  background-size: 75%;
+  background-position: 10px 4px;
+}
+.reaction-box li.support {
+  background: url("https://www.userflow.nl/images/Linkedin-Support-Icon-HeartinHand250.png")
+    no-repeat;
+  background-size: 85%;
+  background-position: 5px 5px;
+}
+.reaction-box li.love {
+  background: url("https://www.userflow.nl/images/Linkedin-Love-Icon-Heart250.png")
+    no-repeat;
+  background-size: 75%;
+  background-position: 10px 9px;
+}
+.reaction-box li.insightful {
+  background: url("https://www.userflow.nl/images/Linkedin-Insightful-Icon-Lamp250.png")
+    no-repeat;
+  background-size: 50%;
+  background-position: 10px 0px;
+}
+.reaction-box li.curious {
+  background: url("https://www.userflow.nl/images/Linkedin-Curious-Icon-PurpleSmiley250.png")
+    no-repeat;
+  background-size: 70%;
+  background-position: 10px 5px;
+}
+.reaction-box li:before {
+  content: attr(data-hover);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.76);
+  display: none;
+}
+.reaction-box li:hover {
+  transform: scale(1.2) translateY(-5px);
+  transition: transform 200ms ease;
+}
+.reaction-box li:hover ~ li {
+  transform: scale(0.6) translateY(0px);
+  transition: transform 200ms ease;
+}
+.reaction-box li:hover:before {
+  display: inline-block;
+}
+
+/* reactions */
+
+/* test */
+.test {
+  gap: 0px;
+}
+
+.profile,
+.aside,
+.main-feed {
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* end of test */

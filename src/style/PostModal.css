@@ -1,0 +1,31 @@
+#BigBox {
+  height: 150px;
+  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 0.6rem;
+}
+
+.img-fluid-post {
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#input {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 442px;
+  height: 55px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(218, 218, 218);
+}
+.icons {
+  font-size: 45px;
+  padding: 0%;
+  margin-left: 55px;
+}
+#BigBox > div:nth-child(n) {
+  padding: 0%;
+}

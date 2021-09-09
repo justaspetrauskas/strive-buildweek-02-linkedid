@@ -1,0 +1,89 @@
+#profile-home-div {
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: white;
+}
+
+#profile-home-div .profile-pic {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  top: 50%;
+  left: 5%;
+}
+
+#profile-home-div .name-title h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  margin-top: 45px;
+}
+
+#profile-home-div .views div {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#profile-home-div .views div .quantity {
+  color: #0a66c2;
+}
+
+#profile-home-div .views div:hover {
+  background-color: #ebebeb;
+}
+
+#profile-home-div .premium {
+  cursor: pointer;
+}
+
+#profile-home-div .premium:hover {
+  background-color: #ebebeb;
+}
+
+#profile-home-div .premium .icon {
+  font-size: 19px;
+  color: #e7a33e;
+}
+
+#profile-home-div .my-items {
+  cursor: pointer;
+}
+
+#profile-home-div .my-items:hover {
+  background-color: #ebebeb;
+}
+
+#profile-home-div .my-items .icon {
+  font-size: 18px;
+}
+#name {
+  margin-top: 35px;
+}
+
+#profile-home-link {
+  border-radius: 10px;
+  font-size: 13px;
+  background-color: rgb(255, 255, 255);
+}
+.group {
+  color: #0a66c2;
+  font-size: 14px;
+}
+
+#event {
+  color: #0a66c2;
+  font-size: 14px;
+}
+
+#hashtag {
+  color: #0a66c2;
+  font-size: 14px;
+}
+.discover {
+  color: rgb(143, 140, 140);
+  font-size: 16px;
+  text-align: center;
+  margin: 0%;
+  padding: auto;
+}

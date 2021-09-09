@@ -1,18 +1,32 @@
+// css
 import "./App.css";
-import Footer from "./components/Footer";
-import Profile from "./components/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
 
-// import { BrowserRouter as Router, Route } from "react-router-dom";
+// router
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// pages
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+
+import MainPage from "./components/MainPage";
+// import MainFeed from "./components/MainFeed";
+import FeedPage from "./components/FeedPage";
 
 function App() {
   return (
-    <div style={{ background: "#cfcfcf" }}>
-      {/* <Profile /> */}
-      <Profile />
-      <Footer />
-      {/* <Footer /> */}
+
+    <div className="main-wrapper">
+      <Router>
+        <Navigation />
+        <Route path="/" exact component={MainPage} />
+        {/* this will be feed */}
+        <Route path="/feed" exact component={FeedPage} />
+
+        <Footer />
+      </Router>
+
     </div>
   );
 }
