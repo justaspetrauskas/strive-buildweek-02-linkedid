@@ -81,3 +81,8 @@
   color: #0a66c2;
   font-size: 14px;
 }
+#profile-home-div {
+}
+#root > div > div > div > div.col-md-2 > div {
+  margin-top: 45px;
+}

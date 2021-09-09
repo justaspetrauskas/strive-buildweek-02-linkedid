@@ -33,9 +33,9 @@ const Education = () => {
                 </div>
                 <div className="d-flex underline">
                   <a href="/" className="Ed-info">
-                    <h5>Strive School</h5>
-                    <p>Full Stack web Developer</p>
-                    <p className='mb-4'>2021-2022</p>
+                   <div><h4>Strive School</h4> <p>Student FS Developer   2021-2022</p> </div>  
+                    
+                    
                   </a>
                 </div>
               </div>
@@ -49,7 +49,7 @@ const Education = () => {
           </div>
         </li>
         <li>
-          <div className="Ed-largest">
+          <div className="Ed-largest mt-4">
             <div className="allContainer">
               <div className="infoContainer">
                 <div className="image-div">
@@ -61,9 +61,9 @@ const Education = () => {
                 </div>
                 <div className="d-flex underline">
                   <a href="/" className="Ed-info">
-                    <h5>The Ministry of Silly Walks</h5>
-                    <p>Unexpected and chaotic activities </p>
-                    <p className='mb-4'>2009-2020</p>
+
+                  <div><h4>The Ministry of Silly Walks</h4> <p>Unexpected and chaotic activities   2005-2020</p> </div>  
+                    
                   </a>
                 </div>
               </div>

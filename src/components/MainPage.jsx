@@ -12,10 +12,10 @@ const MainPage = () => {
       <Row>
         <Col md={9} className="mt-4">
           <ProfileJumbo />
-          <DashBoard />
-          <Activity />
-          <Experience />
-          <Education />
+          <div className ='mt-4'>           <DashBoard /> </div>
+<div className ='mt-4'>           <Activity /> </div>
+<div className ='mt-4'>    <Experience /></div>
+<div className ='mt-4'>  <Education /></div>
         </Col>
         <Col md={3} className="mt-5">
           <Sideprofile />

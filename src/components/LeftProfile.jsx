@@ -3,6 +3,7 @@ import { FcEngineering } from "react-icons/fc";
 import { FaBookmark } from "react-icons/fa";
 import { FetchMe } from "../functions/FetchMe";
 import React from "react";
+import { Container } from "react-bootstrap"
 
 class LeftProfile extends React.Component {
   state = {
@@ -32,6 +33,7 @@ render( ){
 
   return (
     <>
+    <Container className="w-5">
       <div id="profile-home-div" className="overflow-hidden border mt-5">
         <div
           className="position-relative"
@@ -123,7 +125,7 @@ render( ){
           <br />
           <span className="font-weight-bold p-3 mt-1">Discover more </span>
         </div>
-      </div>
+      </div></Container>
     </>
   );
 };}

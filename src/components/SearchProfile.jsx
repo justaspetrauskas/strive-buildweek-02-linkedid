@@ -1,7 +1,7 @@
 import { BsSearch } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
-import "react-bootstrap-typeahead/css/Typeahead.css";
+// import "react-bootstrap-typeahead/css/Typeahead.css";
 
 import { Fragment } from "react";
 
