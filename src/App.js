@@ -16,6 +16,7 @@ import FeedPage from "./components/FeedPage";
 
 function App() {
   return (
+
     <div className="main-wrapper">
       <Router>
         <Navigation />
@@ -25,6 +26,7 @@ function App() {
 
         <Footer />
       </Router>
+
     </div>
   );
 }

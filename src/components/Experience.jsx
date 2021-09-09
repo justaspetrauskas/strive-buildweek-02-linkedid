@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
+import ExperienceModal from "./ExperienceModal";
+import Single from "./SingleExperience";
 const Experience = () => {
   const [userInfo, setUserInfo] = useState([]);
+  const [isModalPost, setIsModalPost] = useState(false);
+  // const [isModalPut, setIsModalPut] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +23,9 @@ const Experience = () => {
         if (responce.ok) {
           const data = await responce.json();
           setUserInfo(data);
+          data.map((d) => {
+            console.log(d.area);
+          });
           console.log("userInfo------->", data);
         }
       } catch (error) {
@@ -28,86 +35,67 @@ const Experience = () => {
     fetchData();
   }, []);
   return (
-    <Card>
-      <Card.Body>
-        <Row>
-          <Col xs>
-            <h5>Experience</h5>
-          </Col>
-          <Col xs className="col-2">
-            <i classclass="bi bi-plus-lg"></i>
-          </Col>
-        </Row>
-        <br />
-        <Row>
-          <Col xs>
-            <img
-              className="rounded-square"
-              src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-              alt=""
-              style={{
-                width: "80px",
-                height: "60px",
-                objectFit: "cover",
-              }}
-            />
-          </Col>
-          <Col xs className="col-8">
-            <h5>{userInfo[0]?.role}</h5>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[0]?.company}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              Jan 2021 – {userInfo[0]?.endDate}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[0]?.area}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[0]?.description}
-              <hr />
-            </p>
-          </Col>
-          <Col xs className="col-2">
-            <i className="bi bi-pencil-fill"></i>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs>
-            <img
-              className="rounded-square"
-              src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-              alt=""
-              style={{
-                width: "80px",
-                height: "60px",
-                objectFit: "cover",
-              }}
-            />
-          </Col>
-          <Col xs className="col-8">
-            <h5>{userInfo[1]?.role}</h5>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[1]?.company}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              sep 2020 - {userInfo[1]?.endDate}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[1]?.area}
-            </p>
-            <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-              {userInfo[1]?.description}
-              <hr />
-            </p>
-          </Col>
-          <Col xs className="col-2">
-            <i className="bi bi-pencil-fill"></i>
-          </Col>
-        </Row>
-        <hr />
-      </Card.Body>
-    </Card>
+    <>
+      <Card>
+        <Card.Body>
+          <Row>
+            <Col xs>
+              <h5>Experience</h5>
+            </Col>
+            <Col xs className="col-2">
+              <i
+                onClick={() => setIsModalPost(!isModalPost)}
+                class="bi bi-plus-lg"
+              ></i>
+            </Col>
+          </Row>
+          <br />
+          <Row>
+            {userInfo &&
+              userInfo.map((exp) => (
+                <>
+                  <Single exp={exp} />
+                </>
+              ))}
+          </Row>
+          {/* <Row>
+            <Col xs>
+              <img
+                className="rounded-square"
+                src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
+                alt=""
+                style={{
+                  width: "80px",
+                  height: "60px",
+                  objectFit: "cover",
+                }}
+              />
+            </Col>
+            <Col xs className="col-8">
+              <h5>{userInfo[1]?.role}</h5>
+              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                {userInfo[1]?.company}
+              </p>
+              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                sep 2020 - {userInfo[1]?.endDate}
+              </p>
+              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                {userInfo[1]?.area}
+              </p>
+              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+                {userInfo[1]?.description}
+                <hr />
+              </p>
+            </Col>
+            <Col xs className="col-2">
+              <i className="bi bi-pencil-fill"></i>
+            </Col>
+          </Row> */}
+          <hr />
+        </Card.Body>
+      </Card>
+      {isModalPost && <ExperienceModal />}
+    </>
   );
 };
 export default Experience;
