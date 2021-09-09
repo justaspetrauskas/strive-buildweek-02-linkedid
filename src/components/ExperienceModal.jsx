@@ -11,7 +11,7 @@ const ExperienceModal = ({ editDetails }) => {
     role: "",
     company: "",
     startDate: "",
-    // endDate: "",
+    endDate: "",
     description: "",
     area: "",
   });

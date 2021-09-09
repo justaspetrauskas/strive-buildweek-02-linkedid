@@ -22,7 +22,7 @@ const Activity = () => {
                   }}
                 />
               </Col>
-              <Col xs className=" p-0">
+              <Col xs>
                 <h5>Congrats!</h5>
                 <p style={{ fontSize: "15px" }}>Vinaykumar commented</p>
               </Col>
@@ -44,7 +44,7 @@ const Activity = () => {
                   }}
                 />
               </Col>
-              <Col xs className=" p-0">
+              <Col xs>
                 <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
                 <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                   Vinaykumar Shared this
@@ -68,7 +68,7 @@ const Activity = () => {
                 }}
               />
             </Col>
-            <Col xs className="col-8 p-0">
+            <Col xs className=" col-xs-8 col-sm-8 p-0">
               <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
               <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                 Vinaykumar Shared this

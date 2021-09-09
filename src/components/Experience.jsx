@@ -58,39 +58,6 @@ const Experience = () => {
                 </>
               ))}
           </Row>
-          {/* <Row>
-            <Col xs>
-              <img
-                className="rounded-square"
-                src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-                alt=""
-                style={{
-                  width: "80px",
-                  height: "60px",
-                  objectFit: "cover",
-                }}
-              />
-            </Col>
-            <Col xs className="col-8">
-              <h5>{userInfo[1]?.role}</h5>
-              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                {userInfo[1]?.company}
-              </p>
-              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                sep 2020 - {userInfo[1]?.endDate}
-              </p>
-              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                {userInfo[1]?.area}
-              </p>
-              <p style={{ fontSize: "14px", marginBottom: "0px" }}>
-                {userInfo[1]?.description}
-                <hr />
-              </p>
-            </Col>
-            <Col xs className="col-2">
-              <i className="bi bi-pencil-fill"></i>
-            </Col>
-          </Row> */}
           <hr />
         </Card.Body>
       </Card>

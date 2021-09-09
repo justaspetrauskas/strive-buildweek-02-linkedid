@@ -6,7 +6,7 @@ const Single = ({ exp }) => {
   const [putModel, setPutModel] = useState(false);
   return (
     <>
-      <Col xs className="col-2">
+      <Col xs>
         <img
           className="rounded-square"
           src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
@@ -18,7 +18,7 @@ const Single = ({ exp }) => {
           }}
         />
       </Col>
-      <Col xs className="col-8">
+      <Col xs className="col-8 ">
         <h5>{exp.role}</h5>
         <p style={{ fontSize: "14px", marginBottom: "0px" }}>{exp.company}</p>
         <p style={{ fontSize: "14px", marginBottom: "0px" }}>
@@ -30,7 +30,7 @@ const Single = ({ exp }) => {
           <hr />
         </p>
       </Col>
-      <Col xs className="col-2">
+      <Col xs>
         <i
           onClick={() => setPutModel(!putModel)}
           className="bi bi-pencil-fill"
