@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, ListGroup, Container, Row, Col, Button } from "react-bootstrap";
+import { Card, ListGroup, Container, Row, Col, Button, Dropdown } from "react-bootstrap";
 import "../style/Sideprofile.css"
 
 class Sideprofile extends Component {
@@ -38,11 +38,10 @@ class Sideprofile extends Component {
 
     render() {
         return (
-            <>
-                <Container className="settings">
-                    <div
-                    >
-                        <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col md-3">
+                        <Card style={{ width: '20rem' }}>
                             <ListGroup variant="flush">
                                 <ListGroup.Item>
                                     Edit public profile & URL
@@ -56,55 +55,57 @@ class Sideprofile extends Component {
                                 </ListGroup.Item>
                             </ListGroup>
                         </Card>
+                        {
+                            <div className="profiles"
+                            >
+                                <Card style={{ width: '20rem' }}>
+                                    <h5><bold>People also viewed</bold></h5>
+                                    {this.state.profiles.map(profile => (
+                                        <> {// flexbox
+                                            // you need to make this flex and then use the flex properties to do the alignment
+                                            // d-flex, justify-content, align-items
+                                            // you might also need to put them inside of another box (div) to do the aligment
+                                        }
+
+                                            <Card.Body className="profile-card-body ">
+                                                <div className="d-flex p-3">
+                                                    <Card.Img variant="bottom" src={profile.image} className="profile-img" />
+                                                    <a href="">
+                                                        <Card.Title className="profile-info">
+                                                            <small><bold>{profile.name} {profile.surname}<br />
+
+                                                                <span className="profile-title">  {profile.title}</span>  </bold></small></Card.Title>
+
+                                                    </a></div>
+
+                                                <Button
+                                                    className="button1"
+                                                    variant="light">Connect</Button>
+
+                                            </Card.Body>
+
+
+                                        </>
+                                    )
+
+                                    )}
+                                    <hr />
+                                    <Dropdown className="dropdown">
+                                        <Dropdown.Toggle variant="white">
+                                            Show more
+                                        </Dropdown.Toggle>
+                                    </Dropdown>
+                                </Card>
+
+
+                            </div>
+
+
+                        }
                     </div>
-                </Container>
-                {
-                    <div className="profiles"
-                    >
-                        <Container
-                            style={{ marginTop: '200px' }}
-                            className="profile-container"
-                        >
-                            <Card>
-                                <h5><bold>People also viewed</bold></h5>
-                                {this.state.profiles.map(profile => (
-                                    <> {// flexbox
-                                        // you need to make this flex and then use the flex properties to do the alignment
-                                        // d-flex, justify-content, align-items
-                                        // you might also need to put them inside of another box (div) to do the aligment
-                                    }
-
-                                        <Card.Body className="profile-card-body ">
-                                            <div className="d-flex p-3">
-                                                <Card.Img variant="bottom" src={profile.image} className="profile-img" />
-                                                <a href="">
-                                                    <Card.Title className="profile-info">
-                                                        <small><bold>{profile.name} {profile.surname}<br />
-
-                                                            <span className="profile-title">  {profile.title}</span>  </bold></small></Card.Title>
-
-                                                </a></div>
-
-                                            <Button
-                                                className="button1"
-                                                variant="light">Connect</Button>
-
-                                        </Card.Body>
-
-
-                                    </>
-                                )
-
-                                )}
-                            </Card>
-
-
-                        </Container>
-
-                    </div>
-                }
-            </>
-        );
+                </div>
+            </div>
+        )
     }
 }
 
