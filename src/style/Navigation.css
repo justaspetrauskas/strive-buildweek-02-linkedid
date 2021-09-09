@@ -39,6 +39,9 @@ input.navigation-search-input {
   color: rgba(0, 0, 0, 0.9);
   padding: 0 8px 0 40px;
 }
+input.navigation-search-input:focus-visible {
+  outline: none;
+}
 .search-icon {
   padding: 4px 8px 4px 8px;
   width: 40px;
@@ -97,7 +100,12 @@ button.navigation-link {
   border-radius: 50px;
   height: 24px;
   width: 24px;
-  border: none;
+  overflow: hidden;
+}
+.link-personal-image img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
 }
 .text-personal {
   display: flex;

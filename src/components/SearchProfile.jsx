@@ -1,14 +1,12 @@
 import { BsSearch } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-
-import { Fragment } from "react";
 
 const SearchProfile = () => {
   const [profiles, setProfiles] = useState([]);
   const [query, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [isOpen, setOpen] = useState(false);
 
   const fetchProfiles = async () => {
     try {
@@ -37,7 +35,8 @@ const SearchProfile = () => {
     setSuggestions([]);
   };
 
-  const onChangeHandler = (query) => {
+  const onChangeHandler = (query, target) => {
+    setOpen(true);
     let matches = [];
     if (query.length > 0) {
       matches = profiles.filter((profile) => {
@@ -64,10 +63,19 @@ const SearchProfile = () => {
         <input
           type="text"
           className="navigation-search-input"
+          style={{
+            width: isOpen ? "400px" : "200px",
+            transition: "width 200ms ease-in",
+          }}
           placeholder="Search"
           value={query}
-          onChange={(e) => onChangeHandler(e.target.value)}
-        // onClick={handleShow}
+          onChange={(e) => onChangeHandler(e.target.value, e.target)}
+          onBlur={() => {
+            setTimeout(() => {
+              setSuggestions([]);
+              setOpen(false);
+            }, 100);
+          }}
         />
         {suggestions.length > 0 && (
           <>

@@ -1,21 +1,29 @@
+// css
 import "./App.css";
-
-import Footer from "./components/Footer";
-
-// import Navigation from "./components/Navigation";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import MainPage from "./components/MainPage";
+
+// router
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// pages
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+
+import MainPage from "./components/MainPage";
+import MainFeed from "./components/MainFeed";
+
 function App() {
   return (
-    <div>
-      {/* <Navigation /> */}
-      <MainPage />
+    <div className="main-wrapper">
+      <Router>
+        <Navigation />
+        <Route path="/" exact component={MainPage} />
+        {/* this will be feed */}
+        <Route path="/feed" exact component={MainFeed} />
 
-      <Footer />
-      {/* <Footer /> */}
+        <Footer />
+      </Router>
     </div>
   );
 }
