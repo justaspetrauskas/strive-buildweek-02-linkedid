@@ -57,3 +57,7 @@ h5 {
 hr {
   margin-top: -15px;
 }
+.settings-card{
+  margin-top: 35px;
+  border-radius: 12px;
+}

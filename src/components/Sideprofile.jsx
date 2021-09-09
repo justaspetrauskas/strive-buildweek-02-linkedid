@@ -40,7 +40,9 @@ class Sideprofile extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col md-3">
-                        <Card style={{ width: '20rem' }}>
+                        <Card
+                            className="settings-card"
+                            style={{ width: '20rem' }} >
                             <ListGroup variant="flush">
                                 <ListGroup.Item>
                                     Edit public profile & URL
