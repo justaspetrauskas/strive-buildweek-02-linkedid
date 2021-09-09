@@ -1,6 +1,9 @@
 import { Container, Row } from "react-bootstrap";
 import "../style/Navigation.css";
-import { BsSearch, BsGrid3X3Gap } from "react-icons/bs";
+import { useState, useEffect } from "react";
+
+// icons
+import { BsGrid3X3Gap } from "react-icons/bs";
 import { AiFillHome, AiOutlineCaretDown } from "react-icons/ai";
 import { IoMdPeople } from "react-icons/io";
 import { MdWork } from "react-icons/md";
@@ -10,6 +13,34 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import SearchProfile from "./SearchProfile";
 
 const Navigation = () => {
+  const [personalProfile, setPersonalProfile] = useState([]);
+  const [accountSetting, openAccountSettings] = useState(true);
+
+  const fetchMe = async () => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/me",
+        {
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM1YzBiODdiZTZjMTAwMTVmOWRiOTAiLCJpYXQiOjE2MzA5MTI3NDIsImV4cCI6MTYzMjEyMjM0Mn0.byBIo7uNfJRP4-fpOCvFNWie1JMeMuhYXLce9wJEiIc",
+          },
+        }
+      );
+      if (response.ok) {
+        let myProfile = await response.json();
+        setPersonalProfile(myProfile);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchMe();
+  }, []);
+
   return (
     <header class="navigation-wrapper">
       <Container>
@@ -98,9 +129,9 @@ const Navigation = () => {
                 </a>
               </li>
               <li className="navigation-item">
-                <button className="navigation-link">
-                  <div className="link-icon link-personal-image ">
-                    <img src="" alt="" />
+                <button className="navigation-link" onClick>
+                  <div className="link-icon link-personal-image">
+                    <img src={personalProfile.image} alt="" />
                   </div>
                   <span className="link-text text-personal d-none d-lg-block">
                     Me

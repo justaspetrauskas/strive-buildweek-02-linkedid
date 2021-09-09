@@ -25,11 +25,11 @@ button.post-header-btn {
   height: 2.4rem;
   width: 2.4rem;
   min-width: auto;
-  transition: background-color 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  border-radius: 50%;
+  transition: background-color 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 button.post-header-btn:hover {
   background-color: rgba(0, 0, 0, 0.08);
-  border-radius: 50%;
 }
 button.post-header-btn svg {
   fill: rgba(0, 0, 0, 0.6);
@@ -148,6 +148,108 @@ button.post-header-btn svg {
 .social-media-action span {
   fill: rgba(0, 0, 0, 0.6);
 }
+
+button.like-btn {
+  position: relative;
+  overflow: visible;
+}
+.like-btn-inner {
+  position: absolute;
+  bottom: 95%;
+  left: -30px;
+  padding-bottom: 15px;
+}
+button.like-btn:hover .reaction-box {
+  display: block;
+}
+.reaction-box {
+  list-style-type: none;
+  margin: 0;
+  display: none;
+  padding: 0 5px;
+  border-radius: 150px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.reaction-box ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.reaction-box li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  transform: scale(0.8) translateY(0);
+  transition: transform 200ms ease;
+  position: relative;
+}
+.reaction-box li.like {
+  background: url("https://www.userflow.nl/images/Linkedin-Like-Icon-Thumbup250.png")
+    no-repeat;
+  background-size: 70%;
+  background-position: 10px 5px;
+}
+.reaction-box li.celebrate {
+  background: url("https://www.userflow.nl/images/Linkedin-Celebrate-Icon-ClappingHands250.png")
+    no-repeat;
+  background-size: 75%;
+  background-position: 10px 4px;
+}
+.reaction-box li.support {
+  background: url("https://www.userflow.nl/images/Linkedin-Support-Icon-HeartinHand250.png")
+    no-repeat;
+  background-size: 85%;
+  background-position: 5px 5px;
+}
+.reaction-box li.love {
+  background: url("https://www.userflow.nl/images/Linkedin-Love-Icon-Heart250.png")
+    no-repeat;
+  background-size: 75%;
+  background-position: 10px 9px;
+}
+.reaction-box li.insightful {
+  background: url("https://www.userflow.nl/images/Linkedin-Insightful-Icon-Lamp250.png")
+    no-repeat;
+  background-size: 50%;
+  background-position: 10px 0px;
+}
+.reaction-box li.curious {
+  background: url("https://www.userflow.nl/images/Linkedin-Curious-Icon-PurpleSmiley250.png")
+    no-repeat;
+  background-size: 70%;
+  background-position: 10px 5px;
+}
+.reaction-box li:before {
+  content: attr(data-hover);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.76);
+  display: none;
+}
+.reaction-box li:hover {
+  transform: scale(1.2) translateY(-5px);
+  transition: transform 200ms ease;
+}
+.reaction-box li:hover ~ li {
+  transform: scale(0.6) translateY(0px);
+  transition: transform 200ms ease;
+}
+.reaction-box li:hover:before {
+  display: inline-block;
+}
+
+/* reactions */
 
 /* test */
 .test {

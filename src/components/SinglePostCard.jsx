@@ -37,12 +37,22 @@ const SinglePostCard = ({ index, post }) => {
         <p>{post.text}</p>
       </div>
       <div className="feed-social-media">
-        <ul className="social-media-reactions">
-          <li>some icon</li>
-        </ul>
+        <ul className="social-media-reactions">{/* <li>some icon</li> */}</ul>
         <ul className="social-media-actions">
           <li>
-            <button class="social-media-action">
+            <button class="social-media-action like-btn">
+              <div className="like-btn-inner">
+                <div className="reaction-box">
+                  <ul>
+                    <li class="like" data-hover="Like"></li>
+                    <li class="celebrate" data-hover="Celebrate"></li>
+                    <li class="support" data-hover="Support"></li>
+                    <li class="love" data-hover="Love"></li>
+                    <li class="insightful" data-hover="Insightful"></li>
+                    <li class="curious" data-hover="Curious"></li>
+                  </ul>
+                </div>
+              </div>
               <AiOutlineLike size={24} />
               <span className="d-none d-lg-block">Like</span>
             </button>
