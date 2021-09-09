@@ -237,12 +237,17 @@ button.like-btn:hover .reaction-box {
   background: rgba(0, 0, 0, 0.76);
   display: none;
 }
-.reaction-box li:hover {
-  transform: scale(1.2) translateY(-5px);
-  transition: transform 200ms ease;
-}
+
 .reaction-box li:hover ~ li {
   transform: scale(0.6) translateY(0px);
+  transition: transform 200ms ease;
+}
+.reaction-box ul:hover .reaction-box li {
+  transform: scale(0.6) translateY(0px);
+  transition: transform 200ms ease;
+}
+.reaction-box li:hover {
+  transform: scale(1.2) translateY(-5px);
   transition: transform 200ms ease;
 }
 .reaction-box li:hover:before {
