@@ -22,9 +22,10 @@
   background-color: rgb(218, 218, 218);
 }
 .icons {
-  font-size: 45px;
+  font-size: 33px;
   padding: 0%;
-  margin-left: 55px;
+  margin-left: 75px;
+  margin-bottom: 29px;
 }
 #BigBox > div:nth-child(n) {
   padding: 0%;
