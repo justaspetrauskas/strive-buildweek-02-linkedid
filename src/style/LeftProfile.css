@@ -2,6 +2,7 @@
   border-radius: 10px;
   font-size: 12px;
   background-color: white;
+  position: relative;
 }
 
 #profile-home-div .profile-pic {
@@ -9,8 +10,11 @@
   height: 6rem;
   border-radius: 50%;
   border: 2px solid white;
+
+  position: absolute;
   top: 50%;
-  left: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #profile-home-div .name-title h6 {

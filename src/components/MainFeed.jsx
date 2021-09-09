@@ -38,12 +38,9 @@ const MainFeed = () => {
     <>
       {posts.length > 0 && (
         <>
-          {posts
-            .slice(0, 25)
-            .reverse()
-            .map((post, i) => (
-              <SinglePostCard index={i} post={post} />
-            ))}
+          {posts.slice(-25).map((post, i) => (
+            <SinglePostCard index={i} post={post} />
+          ))}
         </>
       )}
     </>
