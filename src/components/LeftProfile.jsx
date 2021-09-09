@@ -102,25 +102,25 @@ class LeftProfile extends React.Component {
         <div id="profile-home-div" className="overflow-hidden border mt-3">
           <div className="premium  p-2">
             <br />
-            <span className="font-weight-bold p-1" id="group">
+            <span className="font-weight-bold p-1 group" >
               Groups
             </span>
           </div>
           <div className="my-items p-2">
-            <span className="font-weight-bold">
-              <span className="icon text-muted mr-1 " id="event"></span>
+            <span className="font-weight-bold p-1 group">
+              
               Events +
             </span>
           </div>
           <div className="my-items p-2">
-            <span className="font-weight-bold">
-              <span className="icon text-muted mr-1 " id="hashtag"></span>
+            <span className="font-weight-bold group p-1">
+            
               Followed Hastags
             </span>
           </div>
           <div className="premium border-top p-2">
             <br />
-            <span className="font-weight-bold p-3 mt-1">Discover more </span>
+            <span className="font-weight-bold   discover">Discover more </span>
           </div>
         </div>
       </>
