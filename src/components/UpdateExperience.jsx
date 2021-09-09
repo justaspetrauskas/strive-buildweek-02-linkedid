@@ -1,11 +1,11 @@
 import Experience from "./Experience";
-import "./style/ExperienceModal.css";
+import "./style/UpdateExperience.css";
 import { Modal, Form, Button, Col, Row, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import modalOpen from "./FunctionCalls";
 import { useEffect } from "react";
 
-const ExperienceModal = ({ editDetails }) => {
+const UpdateExperience = ({ editDetails }) => {
   const [dontShow, setDontShow] = useState(null);
   const [postData, setPostData] = useState({
     role: "",
@@ -16,13 +16,34 @@ const ExperienceModal = ({ editDetails }) => {
     area: "",
   });
 
-  const post = async (e) => {
+  const deleteEx = async () => {
+    try {
+      const resp = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${editDetails.user}/experiences/${editDetails._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM3N2EwMGIwMWIwZDAwMTUxNjY5MjkiLCJpYXQiOjE2MzEwMjU2NjQsImV4cCI6MTYzMjIzNTI2NH0.tzYR2FdP6RUgYJhUuHg4jdc95xzSTytWW0KsAg_89x8",
+          },
+        }
+      );
+      if (resp.ok) {
+        alert("Experience Deleted");
+      } else {
+        console.log("problem");
+      }
+    } catch (error) {}
+  };
+
+  const put = async (e) => {
     e.preventDefault();
     try {
       const resp = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences",
+        `https://striveschool-api.herokuapp.com/api/profile/${editDetails.user}/experiences/${editDetails._id}`,
         {
-          method: "POST",
+          method: "PUT",
 
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +84,7 @@ const ExperienceModal = ({ editDetails }) => {
                     role: e.target.value,
                   })
                 }
-                placeholder="Ex. Retail Sales Manager"
+                placeholder={editDetails.role}
               />
               <Form.Text className="text-muted">
                 Country-specific employment types
@@ -81,7 +102,7 @@ const ExperienceModal = ({ editDetails }) => {
                   })
                 }
                 type="text"
-                placeholder="Ex.Microsoft"
+                placeholder={editDetails.company}
               />
             </Form.Group>
             {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -98,7 +119,7 @@ const ExperienceModal = ({ editDetails }) => {
                   })
                 }
                 type="text"
-                placeholder="Ex.London"
+                placeholder={editDetails.area}
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -112,7 +133,7 @@ const ExperienceModal = ({ editDetails }) => {
                     description: e.target.value,
                   })
                 }
-                placeholder="Add Description"
+                placeholder={editDetails.description}
               />
               <Form.Text className="text-muted">
                 Country-specific employment types
@@ -132,7 +153,7 @@ const ExperienceModal = ({ editDetails }) => {
                       })
                     }
                     type="text"
-                    placeholder="1994/06/13"
+                    placeholder={editDetails.startDate}
                   />
                 </Form.Group>
               </Col>
@@ -149,7 +170,7 @@ const ExperienceModal = ({ editDetails }) => {
                       })
                     }
                     type="text"
-                    placeholder="1994/06/13"
+                    placeholder={editDetails.endDate}
                   />
                 </Form.Group>
               </Col>
@@ -158,11 +179,12 @@ const ExperienceModal = ({ editDetails }) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={() => setDontShow()} variant="secondary">
-            Close
+          <Button onClick={deleteEx} variant="secondary">
+            Delete
           </Button>
-          <Button onClick={post} variant="primary">
-            Save changes
+
+          <Button onClick={put} variant="primary">
+            Save
           </Button>
         </Modal.Footer>
       </Modal.Dialog>
@@ -170,4 +192,4 @@ const ExperienceModal = ({ editDetails }) => {
   );
 };
 
-export default ExperienceModal;
+export default UpdateExperience;
