@@ -21,21 +21,19 @@ const Education = () => {
       </header>
       <ul>
         <li>
-          <div className="Ed-largest">
+          <div className="Ed-largest my-5">
             <div className="allContainer">
               <div className="infoContainer">
-                <div className="image-div">
+                <div className="image-div ">
                   <img
-                    className="Ed-image"
+                    className="Ed-image mb-5"
                     src="https://media-exp1.licdn.com/dms/image/C4D0BAQFFQIjyDsOK0w/company-logo_100_100/0/1593351903670?e=1639008000&v=beta&t=38emh8r8X3fw7Ah3ky91KyaVJT_6wSkxl1MqF2QRf5E"
                     alt=""
                   />
                 </div>
                 <div className="d-flex underline">
                   <a href="/" className="Ed-info">
-                    <h5>Strive School</h5>
-                    <p>Full Stack web Developer</p>
-                    <p className='mb-4'>2021-2022</p>
+                  <div>  <h4><b>Strive School </b> </h4><p>Student FS Developer 2021-2022</p> </div>
                   </a>
                 </div>
               </div>
@@ -61,9 +59,9 @@ const Education = () => {
                 </div>
                 <div className="d-flex underline">
                   <a href="/" className="Ed-info">
-                    <h5>The Ministry of Silly Walks</h5>
-                    <p>Unexpected and chaotic activities </p>
-                    <p className='mb-4'>2009-2020</p>
+                   <div>  <h4><b>The Ministry of Silly Walks</b></h4><p>Unexpected and chaotic activities 2009-2020</p> </div>
+                    
+                    
                   </a>
                 </div>
               </div>
