@@ -11,7 +11,8 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 
 import MainPage from "./components/MainPage";
-import MainFeed from "./components/MainFeed";
+// import MainFeed from "./components/MainFeed";
+import FeedPage from "./components/FeedPage";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Navigation />
         <Route path="/" exact component={MainPage} />
         {/* this will be feed */}
-        <Route path="/feed" exact component={MainFeed} />
+        <Route path="/feed" exact component={FeedPage} />
 
         <Footer />
       </Router>
