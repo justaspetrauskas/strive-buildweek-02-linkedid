@@ -35,7 +35,7 @@ const SearchProfile = () => {
     setSuggestions([]);
   };
 
-  const onChangeHandler = (query, target) => {
+  const onChangeHandler = (query) => {
     setOpen(true);
     let matches = [];
     if (query.length > 0) {
