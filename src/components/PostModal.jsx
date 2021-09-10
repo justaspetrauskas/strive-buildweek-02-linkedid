@@ -254,6 +254,11 @@ const PostModal = (props) => {
   }, []);
   
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (    
       <div className="post-center box">
         <div className="d-flex">
@@ -262,11 +267,83 @@ const PostModal = (props) => {
 
               id='picOK'
               src={showPic.image}
-
+onClick={handleShow}
               alt=""
             />
             
+            
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title><h4> Create a post </h4></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
           
+        <Row>
+                 <Col md={1}> 
+                   <img
+                    // onClick={this.handleShow}
+                     className="img-fluid-post text-left inner"
+                     src={showPic.image}
+                     alt="profile pic"
+                   />
+                 </Col>
+                 <Col><Dropdown className="pl-4 ">
+                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                       AnyOne
+                     </Dropdown.Toggle>
+
+                     <Dropdown.Menu>
+                       <Dropdown.Item href="#/action-1">sth</Dropdown.Item>
+                       <Dropdown.Item href="#/action-2">
+                         say whatt??
+                       </Dropdown.Item>
+                       <Dropdown.Item href="#/action-3">yye?</Dropdown.Item>
+                     </Dropdown.Menu>
+                   </Dropdown>
+                   <h3 className="pl-5">
+                     {showPic.name}
+                     <span>  {showPic.surname} </span>
+                     
+                   </h3>
+                   
+                 </Col>
+               </Row>
+             </Modal.Body>
+             <Modal.Body>
+               <Form.Group className="mb-3" onSubmit={submitPost}
+               
+              //  onSubmit={this.submitPost}
+               >
+                 <Form.Control onSubmit={submitPost}
+                   as="textarea"
+                   rows={10}
+                   //value={this.state.userPost}
+                   placeholder="What do you want to talk about? "
+                   value={enteredPost.text}
+                   onChange={handlerPost}
+              onClick={handleShow}
+                   //onChange={
+                     //this.handlerPost
+                     // (e)=>this.setState({userPost : target.value})
+                  // }
+                 />
+               </Form.Group>
+          
+          
+          
+          
+          
+          </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handlerPost, handleClose }>
+           Post it
+          </Button>
+        </Modal.Footer>
+      </Modal>
           
           <form onSubmit={submitPost} className="w-100">
             <input
@@ -277,6 +354,7 @@ const PostModal = (props) => {
               name=""
               id="inputForPost"
               onChange={handlerPost}
+              onClick={handleShow}
             />{" "}
             <br />
             {/* <input
