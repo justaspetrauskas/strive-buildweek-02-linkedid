@@ -3,9 +3,11 @@ const DashBoard = () => {
   return (
     <Card border="#575551" style={{ background: "#98a8b3" }}>
       <Card.Body>
-        <Row pill="true" bg="primary" border="#575551" className="px-4 m-0">
+        <Row pill="true" bg="primary" border="#575551" className=" p-0 m-0">
           <Col className="col-10">
-            <h5>Your Dashboard</h5>
+            <h5 style={{ marginBottom: "5px", marginLeft: "0px" }}>
+              Your Dashboard
+            </h5>
             <span>Private to you</span>
           </Col>
           <Col className="col-2">
@@ -16,7 +18,10 @@ const DashBoard = () => {
           </Col>
         </Row>
 
-        <Row className="">
+        <Row
+          style={{ marginTop: "5px", marginLeft: "0px", marginRight: "0px" }}
+          className=""
+        >
           <Col sm style={{ background: "white", margin: "1px" }}>
             <h1 style={{ fontSize: "28px", color: "#3a5599" }}>150</h1>
             <p className="small text-dark">Who Viewed Your Profile</p>
