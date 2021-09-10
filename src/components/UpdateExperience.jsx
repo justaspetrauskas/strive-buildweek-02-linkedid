@@ -159,7 +159,9 @@ const UpdateExperience = ({ editDetails }) => {
               </Col>
               <Col className="col-4 m-2">
                 <p>end date*</p>
+
                 <Form.Group className="mb-3">
+
                   {/* <Form.Label>1994/06/13</Form.Label> */}
                   <Form.Control
                     value={postData.endDate}

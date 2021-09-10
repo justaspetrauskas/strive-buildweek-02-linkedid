@@ -68,7 +68,7 @@ const Footer = () => {
             </li>
           </ul>
         </Col>
-        <Col xs={12} sm={6} md={3} lg={3} xl={3} className="col-3 w-100">
+        <Col xs={12} sm={6} md={3} lg={3} xl={3}>
           <span className="small">Select Language</span>
           <DropdownButton
             id="dropdown-basic"

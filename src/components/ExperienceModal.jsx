@@ -11,9 +11,12 @@ const ExperienceModal = ({ editDetails }) => {
     role: "",
     company: "",
     startDate: "",
-    // endDate: "",
+
+    endDate: "",
     description: "",
     area: "",
+    image: null,
+
   });
 
   const post = async (e) => {
@@ -44,6 +47,27 @@ const ExperienceModal = ({ editDetails }) => {
   };
   // postData();
 
+  const uploadPicture = (e) => {
+    e.preventDefault();
+    setPostData({
+      /* contains the preview, if you want to show the picture to the user
+           you can access it with this.state.currentPicture
+       */
+      ...postData,
+      image: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+  const imageUpload = (e) => {
+    if (e.target.files.length == 0) {
+      console.log("No image selected!");
+    } else {
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(e.target.files[0]),
+      });
+    }
+  };
+
   return (
     <div>
       <Modal.Dialog>
@@ -52,7 +76,9 @@ const ExperienceModal = ({ editDetails }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
+
             <Form.Group className="mb-3">
+
               <Form.Label>Title*</Form.Label>
               <Form.Control
                 type="text"
@@ -118,6 +144,12 @@ const ExperienceModal = ({ editDetails }) => {
                 Country-specific employment types
               </Form.Text>
             </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Add Image</Form.Label>
+              <Form.Control onChange={(e) => imageUpload(e)} type="file" />
+            </Form.Group>
+
             <Row>
               <Col className="col-4 m-2">
                 <p>Starting date*</p>

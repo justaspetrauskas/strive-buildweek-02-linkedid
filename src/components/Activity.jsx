@@ -4,7 +4,7 @@ const Activity = () => {
     <Card>
       <Card.Body>
         <Row>
-          <Col xs className="col-6">
+          <Col xs className="col-6 ">
             <h5>Activity</h5>
             <h5 style={{ fontSize: "15px", color: "#3a5589" }}>
               101 Followers
@@ -22,7 +22,7 @@ const Activity = () => {
                   }}
                 />
               </Col>
-              <Col xs className=" p-0">
+              <Col xs>
                 <h5>Congrats!</h5>
                 <p style={{ fontSize: "15px" }}>Vinaykumar commented</p>
               </Col>
@@ -32,7 +32,7 @@ const Activity = () => {
           <br />
           <Col xs>
             <Row style={{ marginTop: "50px" }}>
-              <Col xs className="col-4 ">
+              <Col xs className="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <img
                   className="rounded-square"
                   src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
@@ -44,7 +44,7 @@ const Activity = () => {
                   }}
                 />
               </Col>
-              <Col xs className=" p-0">
+              <Col xs>
                 <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
                 <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                   Vinaykumar Shared this
@@ -68,7 +68,7 @@ const Activity = () => {
                 }}
               />
             </Col>
-            <Col xs className="col-8 p-0">
+            <Col xs className=" col-xs-8 col-sm-8 p-0">
               <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
               <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                 Vinaykumar Shared this

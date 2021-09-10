@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import ExperienceModal from "./ExperienceModal";
 import Single from "./SingleExperience";
+
 const Experience = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [isModalPost, setIsModalPost] = useState(false);
@@ -46,6 +47,7 @@ const Experience = () => {
               <i
                 onClick={() => setIsModalPost(!isModalPost)}
                 class="bi bi-plus-lg"
+                id="1"
               ></i>
             </Col>
           </Row>
@@ -58,6 +60,7 @@ const Experience = () => {
                 </>
               ))}
           </Row>
+
           {/* <Row>
             <Col xs>
               <img
@@ -91,6 +94,7 @@ const Experience = () => {
               <i className="bi bi-pencil-fill"></i>
             </Col>
           </Row> */}
+
           <hr />
         </Card.Body>
       </Card>
