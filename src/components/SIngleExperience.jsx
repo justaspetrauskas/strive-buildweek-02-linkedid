@@ -9,8 +9,8 @@ const Single = ({ exp }) => {
       <Col xs>
         <img
           className="rounded-square"
-          src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
-          alt="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
+          src={exp.image}
+          alt=""
           style={{
             width: "80px",
             height: "60px",
