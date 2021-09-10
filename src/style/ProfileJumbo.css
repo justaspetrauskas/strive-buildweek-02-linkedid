@@ -46,6 +46,20 @@
   line-height: 20px;
   font-weight: 600;
 }
+.personal-info {
+  display: flex;
+  flex-direction: column;
+}
+.personal-info h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 0.7rem;
+}
+.personal-info .area {
+  font-size: 0.8rem;
+  font-weight: 400rem;
+  color: rgba(39, 39, 39, 0.699);
+}
 
 .firstBtn {
   color: white;
@@ -299,4 +313,6 @@ span.carousel-control-prev-icon {
 
 input[type="file"] {
   display: none;
+}
+.connections {
 }

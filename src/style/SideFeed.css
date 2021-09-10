@@ -41,5 +41,6 @@
     color: gray;
     font-size: small;
 }
-
-
+.footer{
+    align-content: center;
+}

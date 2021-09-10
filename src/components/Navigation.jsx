@@ -11,10 +11,11 @@ import { RiMessage3Fill } from "react-icons/ri";
 import { IoNotificationsSharp } from "react-icons/io5";
 // import NavigationItem from "../components/NavigationItem";
 import SearchProfile from "./SearchProfile";
+import NavigationMeModal from "./NavigationMeModal";
 
 const Navigation = () => {
   const [personalProfile, setPersonalProfile] = useState([]);
-  const [accountSetting, openAccountSettings] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
 
   const fetchMe = async () => {
     try {
@@ -40,6 +41,12 @@ const Navigation = () => {
   useEffect(() => {
     fetchMe();
   }, []);
+
+  const handleShow = (e) => {
+    setShowSettings(!showSettings);
+    // console.log("this is working");
+  };
+  const handleClose = () => setShowSettings(false);
 
   return (
     <header class="navigation-wrapper">
@@ -129,7 +136,7 @@ const Navigation = () => {
                 </a>
               </li>
               <li className="navigation-item">
-                <button className="navigation-link" onClick>
+                <button className="navigation-link" onClick={handleShow}>
                   <div className="link-icon link-personal-image">
                     <img src={personalProfile.image} alt="" />
                   </div>
@@ -138,6 +145,12 @@ const Navigation = () => {
                     <AiOutlineCaretDown />
                   </span>
                 </button>
+                {/* navigation modal */}
+                <NavigationMeModal
+                  showSettings={showSettings}
+                  profile={personalProfile}
+                  setShowSettings={handleShow}
+                />
               </li>
               <li className="navigation-item navigation-divider">
                 <button className="navigation-link">
