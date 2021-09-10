@@ -1,4 +1,5 @@
 import { Row, Col, Card } from "react-bootstrap";
+import "./style/Activity.css";
 const Activity = () => {
   return (
     <Card>
@@ -23,14 +24,14 @@ const Activity = () => {
                 />
               </Col>
               <Col xs className=" p-0">
-                <h5>Congrats!</h5>
+                <h5 id="heading1">Congrats!</h5>
                 <p style={{ fontSize: "15px" }}>Vinaykumar commented</p>
               </Col>
             </Row>
           </Col>
 
           <br />
-          <Col xs>
+          <Col xs id="fixmargin">
             <Row style={{ marginTop: "50px" }}>
               <Col xs className="col-4 ">
                 <img
@@ -45,7 +46,9 @@ const Activity = () => {
                 />
               </Col>
               <Col xs className=" p-0">
-                <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
+                <h5 id="fixmargin2">
+                  Certificate-VINAYKUMAR KOLLU-Strive School!
+                </h5>
                 <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                   Vinaykumar Shared this
                 </p>
@@ -56,7 +59,12 @@ const Activity = () => {
             </Row>
           </Col>
           <Row>
-            <Col style={{ paddingLeft: "20px" }} xs className="col-3">
+            <Col
+              style={{ paddingLeft: "20px" }}
+              xs
+              id="fixmargin3"
+              className="col-3"
+            >
               <img
                 className="rounded-square"
                 src="https://csb39af7c2f2658x433dxa4d.blob.core.windows.net/credentials/cert-f69e69ec-bf93-4dba-8caf-dbd3dd9f131a.svg"
@@ -69,7 +77,9 @@ const Activity = () => {
               />
             </Col>
             <Col xs className="col-8 p-0">
-              <h5>Certificate-VINAYKUMAR KOLLU-Strive School!</h5>
+              <h5 id="fixmargin4">
+                Certificate-VINAYKUMAR KOLLU-Strive School!
+              </h5>
               <p style={{ fontSize: "14px", marginBottom: "0px" }}>
                 Vinaykumar Shared this
               </p>
@@ -77,9 +87,10 @@ const Activity = () => {
                 20 Reactions
               </p>
             </Col>
+            <hr />
           </Row>
         </Row>
-        <hr />
+
         <p className="text-center">See all Activity</p>
       </Card.Body>
     </Card>

@@ -18,19 +18,34 @@ const Single = ({ exp }) => {
           }}
         />
       </Col>
-      <Col xs className="col-8">
-        <h5>{exp.role}</h5>
-        <p style={{ fontSize: "14px", marginBottom: "0px" }}>{exp.company}</p>
-        <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+      <Col xs className="col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <h5 style={{ marginBottom: "10px", marginTop: "0px" }}>{exp.role}</h5>
+        <p
+          style={{
+            fontSize: "14px",
+            marginBottom: "0px",
+            paddingLeft: "10px",
+          }}
+        >
+          {exp.company}
+        </p>
+        <p
+          style={{ fontSize: "14px", marginBottom: "0px", paddingLeft: "10px" }}
+        >
           Jan 2021 – {exp.endDate}
         </p>
-        <p style={{ fontSize: "14px", marginBottom: "0px" }}>{exp.area}</p>
-        <p style={{ fontSize: "14px", marginBottom: "0px" }}>
+        <p
+          style={{ fontSize: "14px", marginBottom: "0px", paddingLeft: "10px" }}
+        >
+          {exp.area}
+        </p>
+        <p
+          style={{ fontSize: "14px", marginBottom: "0px", paddingLeft: "10px" }}
+        >
           {exp.description}
-          <hr />
         </p>
       </Col>
-      <Col xs className="col-2">
+      <Col xs className="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <i
           onClick={() => setPutModel(!putModel)}
           className="bi bi-pencil-fill"
