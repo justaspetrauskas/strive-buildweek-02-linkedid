@@ -238,7 +238,7 @@ const PostModal = (props) => {
           {
           <img
               className="post-profile-img mr-2"
-              id='picOK'
+              id='picOOOOK'
               src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
               alt=""
             />
