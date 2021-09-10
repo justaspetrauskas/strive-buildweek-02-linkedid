@@ -72,7 +72,7 @@ const ExperienceModal = ({ editDetails }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3 " id="1">
               <Form.Label>Title*</Form.Label>
               <Form.Control
                 type="text"

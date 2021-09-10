@@ -46,6 +46,7 @@ const Experience = () => {
               <i
                 onClick={() => setIsModalPost(!isModalPost)}
                 class="bi bi-plus-lg"
+                id="1"
               ></i>
             </Col>
           </Row>

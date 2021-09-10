@@ -34,6 +34,7 @@ const Single = ({ exp }) => {
         <i
           onClick={() => setPutModel(!putModel)}
           className="bi bi-pencil-fill"
+          id="1"
         ></i>
       </Col>
       {putModel && <UpdateExperience editDetails={exp} />}
