@@ -1,7 +1,7 @@
 // css
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 // router
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -16,7 +16,6 @@ import FeedPage from "./components/FeedPage";
 
 function App() {
   return (
-
     <div className="main-wrapper">
       <Router>
         <Navigation />
@@ -26,7 +25,6 @@ function App() {
 
         <Footer />
       </Router>
-
     </div>
   );
 }
