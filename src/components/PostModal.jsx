@@ -12,6 +12,7 @@ import { FetchMe } from "../functions/FetchMe";
 import { submitPost } from "../functions/FetchMe";
 import { FcPicture, FcPhotoReel, FcPlanner, FcLandscape } from "react-icons/fc";
 import { FaIndent } from "react-icons/fa";
+import {  useEffect } from "react";
 
 // class PostModal extends React.Component {
 //   state = {
@@ -169,7 +170,7 @@ const PostModal = (props) => {
   });
 
 
-  const [showPic, setShowPic] = useState(true)
+  const [showPic, setShowPic] = useState([])
 
  
   const handlerPost = (event) => {
@@ -227,22 +228,44 @@ const PostModal = (props) => {
     }
   };
 
+  const BASE_URL = "https://striveschool-api.herokuapp.com/api/profile/me";
 
+   const FetchMe = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}	`, {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM1YzBiODdiZTZjMTAwMTVmOWRiOTAiLCJpYXQiOjE2MzA5MTI3NDIsImV4cCI6MTYzMjEyMjM0Mn0.byBIo7uNfJRP4-fpOCvFNWie1JMeMuhYXLce9wJEiIc",
+        },
+      });
+      if (response.ok) {
+        const user = await response.json();
+        setShowPic(user)
+  
+        
+      }
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+  useEffect(() => {
+    FetchMe();
+  }, []);
+  
 
-
-
-  return (
-    
+  return (    
       <div className="post-center box">
         <div className="d-flex">
-          {
-          <img
+           <img
               className="post-profile-img mr-2"
-              id='picOOOOK'
-              src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+
+              id='picOK'
+              src={showPic.image}
+
               alt=""
             />
-            }
+            
           
           
           <form onSubmit={submitPost} className="w-100">
