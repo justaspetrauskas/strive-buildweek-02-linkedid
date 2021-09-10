@@ -2,7 +2,7 @@ import Experience from "./Experience";
 import "./style/UpdateExperience.css";
 import { Modal, Form, Button, Col, Row, Dropdown } from "react-bootstrap";
 import { useState } from "react";
-import modalOpen from "./FunctionCalls";
+
 import { useEffect } from "react";
 
 const UpdateExperience = ({ editDetails }) => {
@@ -159,7 +159,9 @@ const UpdateExperience = ({ editDetails }) => {
               </Col>
               <Col className="col-4 m-2">
                 <p>end date*</p>
-                <Form.Group className="mb-3" id="1">
+
+                <Form.Group className="mb-3">
+
                   {/* <Form.Label>1994/06/13</Form.Label> */}
                   <Form.Control
                     value={postData.endDate}

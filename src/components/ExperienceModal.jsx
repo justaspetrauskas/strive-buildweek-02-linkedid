@@ -2,7 +2,7 @@ import Experience from "./Experience";
 import "./style/ExperienceModal.css";
 import { Modal, Form, Button, Col, Row, Dropdown } from "react-bootstrap";
 import { useState } from "react";
-import modalOpen from "./FunctionCalls";
+
 import { useEffect } from "react";
 
 const ExperienceModal = ({ editDetails }) => {
@@ -11,10 +11,12 @@ const ExperienceModal = ({ editDetails }) => {
     role: "",
     company: "",
     startDate: "",
+
     endDate: "",
     description: "",
     area: "",
     image: null,
+
   });
 
   const post = async (e) => {
@@ -44,6 +46,7 @@ const ExperienceModal = ({ editDetails }) => {
     }
   };
   // postData();
+
   const uploadPicture = (e) => {
     e.preventDefault();
     setPostData({
@@ -64,6 +67,7 @@ const ExperienceModal = ({ editDetails }) => {
       });
     }
   };
+
   return (
     <div>
       <Modal.Dialog>
@@ -72,7 +76,9 @@ const ExperienceModal = ({ editDetails }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 " id="1">
+
+            <Form.Group className="mb-3">
+
               <Form.Label>Title*</Form.Label>
               <Form.Control
                 type="text"
@@ -138,10 +144,12 @@ const ExperienceModal = ({ editDetails }) => {
                 Country-specific employment types
               </Form.Text>
             </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Add Image</Form.Label>
               <Form.Control onChange={(e) => imageUpload(e)} type="file" />
             </Form.Group>
+
             <Row>
               <Col className="col-4 m-2">
                 <p>Starting date*</p>
