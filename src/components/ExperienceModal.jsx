@@ -48,7 +48,7 @@ const ExperienceModal = ({ editDetails }) => {
     <div>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Add New Experience</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>

@@ -44,6 +44,7 @@ const Experience = () => {
             </Col>
             <Col xs className="col-2">
               <i
+                style={{ marginTop: "20px" }}
                 onClick={() => setIsModalPost(!isModalPost)}
                 class="bi bi-plus-lg"
               ></i>
