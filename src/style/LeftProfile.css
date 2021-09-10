@@ -4,19 +4,19 @@
   background-color: white;
   position: relative;
 }
-
+#tapeta {
+}
 #profile-home-div .profile-pic {
-  width: 6rem;
-  height: 6rem;
+  width: auto;
+  height: auto;
   border-radius: 50%;
   border: 2px solid white;
 
   position: absolute;
   top: 50%;
-
+  z-index: 100;
   left: 50%;
   transform: translateX(-50%);
-
 }
 
 #profile-home-div .name-title h6 {
@@ -24,6 +24,7 @@
   font-weight: 600;
   color: black;
   margin-top: 45px;
+  z-index: -4;
 }
 
 #profile-home-div .views div {
@@ -92,4 +93,7 @@
   text-align: center;
   margin: 0%;
   padding: auto;
+}
+#newBox {
+  z-index: 100;
 }

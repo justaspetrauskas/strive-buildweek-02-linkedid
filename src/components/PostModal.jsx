@@ -168,7 +168,10 @@ const PostModal = (props) => {
     text: "",
   });
 
-  const [postImage, setPostImage] = useState(null);
+
+  const [showPic, setShowPic] = useState(true)
+
+ 
   const handlerPost = (event) => {
     setEnteredPost({ text: event.target.value });
   };
@@ -224,17 +227,22 @@ const PostModal = (props) => {
     }
   };
 
+
+
+
+
   return (
-    <div className="post-form border">
-      <div className="post-center">
+    
+      <div className="post-center box">
         <div className="d-flex">
+          {
           <img
               className="post-profile-img mr-2"
               id='picOK'
               src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
               alt=""
             />
-            
+            }
           
           
           <form onSubmit={submitPost} className="w-100">
@@ -248,11 +256,11 @@ const PostModal = (props) => {
               onChange={handlerPost}
             />{" "}
             <br />
-            <input
+            {/* <input
               type="file"
               onChange={(e) => setPostImage(e.target.files[0])}
-            />
-            {/* <button type="submit"></button> */}
+            /> */}
+            {/* <button type="submit"></button>  */}
           </form>
         </div>
         <div className="d-flex justify-content-between my-4">
@@ -279,7 +287,7 @@ const PostModal = (props) => {
         </div>
       </div>
      
-    </div>
+    
   );
 };
 
