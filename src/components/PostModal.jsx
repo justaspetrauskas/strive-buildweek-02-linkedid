@@ -259,8 +259,10 @@ const PostModal = (props) => {
         <div className="d-flex">
            <img
               className="post-profile-img mr-2"
+
               id='picOK'
               src={showPic.image}
+
               alt=""
             />
             
