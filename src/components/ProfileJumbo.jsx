@@ -60,59 +60,40 @@ class ProfileJumbo extends React.Component {
                 user={this.state.user}
                 fetchProfile={this.fetchProfile}
               />
-
-              <div className="d-flex justify-content-between ">
-                <div className="personal-info  pb-3">
-                  <div></div>
-
-                  <h2>
-                    {this.state.loading ? "loading" : this.state.user.name}
-                    <span> </span>
-                    {this.state.loading ? "loading" : this.state.user.surname}
-                  </h2>
-
-                  <p>
-                    {this.state.loading ? "loading" : this.state.user.title}{" "}
-                  </p>
-                  <div>
-                    {" "}
-                    {this.state.loading ? "loading" : this.state.user.area}
-                  </div>
-
-                  <p className="text-muted personal-info-text ">
-                    {this.state.loading ? "loading" : this.state.user.bio}
-                  </p>
-                  <div className="d-flex">
-                    <p className=" text-muted personal-info-text">
-                      {this.state.loading ? "loading" : this.state.user.email}
-                    </p>
-
-                    <p className="ml-2">
+              {this.state.user && (
+                <div className="d-flex justify-content-between">
+                  <div className="personal-info">
+                    <h2>
+                      {this.state.user.name} {this.state.user.surname}
+                    </h2>
+                    <span>{this.state.user.title}</span>
+                    <span className="bio">{this.state.user.bio}</span>
+                    <span className="area">{this.state.user.area}</span>
+                    <div className="d-flex">
+                      <span className=" text-muted email">
+                        {this.state.user.email}
+                      </span>
                       <a className=" personal-text-color " href="/">
-                        <b> Contact Info </b>
+                        Contact Info
                       </a>
-                    </p>
+                    </div>
                   </div>
+                </div>
+              )}
+              <div>
+                <span className="connections my-2">
+                  <a
+                    className="personal-info-text personal-text-color "
+                    href="/"
+                  >
+                    100 connections
+                  </a>
+                </span>
 
-                  <div className="d-flex my-2">
-                    <a
-                      className="mr-1 personal-info-text personal-text-color  "
-                      href="/"
-                    ></a>
-                    <p className="mr-1"></p>
-                    <a
-                      className="personal-info-text personal-text-color "
-                      href="/"
-                    >
-                      <b> 100 connections</b>
-                    </a>
-                  </div>
-
-                  <div className="buttons-personal-info">
-                    <button className="firstBtn">Open to</button>
-                    <button className="secondBtn">Add section</button>
-                    <button className="thirdBtn">More</button>
-                  </div>
+                <div className="buttons-personal-info">
+                  <button className="firstBtn">Open to</button>
+                  <button className="secondBtn">Add section</button>
+                  <button className="thirdBtn">More</button>
                 </div>
 
                 <div>
