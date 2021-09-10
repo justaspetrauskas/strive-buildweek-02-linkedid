@@ -1,6 +1,7 @@
 import MainFeed from "./MainFeed";
 import LeftProfile from "./LeftProfile";
 import PostModal from "./PostModal";
+import SideFeed from "./SideFeed";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -19,7 +20,7 @@ const FeedPage = () => {
           <MainFeed />
         </Col>
         <Col md={3} className="d-none d-lg-block aside">
-          <div> this is a test for the side container</div>
+          <SideFeed />
         </Col>
       </Row>
     </Container>

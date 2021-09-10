@@ -6,7 +6,7 @@ const Activity = () => {
         <Row>
           <Col xs className="col-6">
             <h5>Activity</h5>
-            <h5 style={{ fontSize: "15px", color: "#3a5599" }}>
+            <h5 style={{ fontSize: "15px", color: "#3a5589" }}>
               101 Followers
             </h5>
             <Row style={{ maeginBottom: "30px" }}>

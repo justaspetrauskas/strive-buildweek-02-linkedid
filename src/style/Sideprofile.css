@@ -1,45 +1,63 @@
-.profile-img{
-    vertical-align: middle;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: -10px;
+.profile-img {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: -10px;
 }
-.settings{
-    margin-top: 20%;
-    
+.settings {
+  margin-top: 20%;
 }
-.profile-container{
-    width: 120%;
+.profile-container {
+  width: 120%;
 }
-h5{
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-bottom: 30px;
-    
+h5 {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 30px;
 }
-.button1{
-background-color: white;
-border-radius: 62px;
-border: 1px solid #131212;
-font-size: 16px;
-width: 100px;
-display: flex;
-margin-left: 20%;
-margin-top: -18px;
-color: rgb(93, 93, 93);
+.button1 {
+  background-color: white;
+  border-radius: 62px;
+  border: 1px solid #131212;
+  font-size: 16px;
+  width: 100px;
+  display: flex;
+  margin-left: 20%;
+  margin-top: -28px;
+  color: rgb(93, 93, 93);
 }
-.profile-card-body{
-    margin: -20px;
+.profile-card-body {
+  margin: -20px;
+  margin-top: -40px;
+  margin-bottom: 5px;
+  margin-left: 1px;
 }
-.profile-card-body a{
-    color:black;
+.profile-card-body a {
+  color: black;
 }
-.profile-card-body .profile-title{
-    color: gray;
-    font-size: 14px;
+.profile-card-body .profile-title {
+  color: gray;
+  font-size: 14px;
 }
-.bi{
-    margin-right: 10px;
-    color: rgb(97, 96, 96);
+.bi {
+  margin-right: 10px;
+  color: rgb(97, 96, 96);
+}
+.profiles {
+  margin-top: 20px;
+}
+.dropdown {
+  align-items: center;
+  align-content: center;
+  margin-left: 95px;
+  margin-top: -15px;
+  color: gray;
+}
+hr {
+  margin-top: -15px;
+}
+.settings-card{
+  margin-top: 35px;
+  border-radius: 12px;
 }

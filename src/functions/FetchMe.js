@@ -1,6 +1,5 @@
 // const API_Key = process.env.MAGDALENA_LINKEDIN_TOKEN;
-const BASE_URL =
-  "https://striveschool-api.herokuapp.com/api/profile/6136631a7be6c10015f9dbd5";
+const BASE_URL = "https://striveschool-api.herokuapp.com/api/profile/me";
 
 // fetch(`https://awesome.api.io?api-key=${process.env.REACT_APP_SECRET_NAME}`)
 
@@ -9,7 +8,7 @@ export const FetchMe = async () => {
     const response = await fetch(`${BASE_URL}	`, {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2NjMxYTdiZTZjMTAwMTVmOWRiZDUiLCJpYXQiOjE2MzA5NTQyNjYsImV4cCI6MTYzMjE2Mzg2Nn0.HogYsweMAQUpppsrUiwowbIdCFQ7dOSSLbEGyxsl5IQ",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM1YzBiODdiZTZjMTAwMTVmOWRiOTAiLCJpYXQiOjE2MzA5MTI3NDIsImV4cCI6MTYzMjEyMjM0Mn0.byBIo7uNfJRP4-fpOCvFNWie1JMeMuhYXLce9wJEiIc",
       },
     });
     if (response.ok) {

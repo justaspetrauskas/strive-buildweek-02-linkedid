@@ -1,7 +1,7 @@
 import { Row, Col, Card, ListGroup } from "react-bootstrap";
 const DashBoard = () => {
   return (
-    <Card border="#575551" style={{ background: "#98a8b4" }}>
+    <Card border="#575551" style={{ background: "#98a8b3" }}>
       <Card.Body>
         <Row pill="true" bg="primary" border="#575551" className="px-4 m-0">
           <Col className="col-10">
