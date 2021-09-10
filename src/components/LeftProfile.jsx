@@ -28,25 +28,30 @@ class LeftProfile extends React.Component {
   render() {
     return (
       <>
-        <div id="profile-home-div" className="overflow-hidden border">
+        <div id="profile-home-div" >
           <div
-            className="position-relative"
+            className="position-relative mb-4" id='tapeta'
             style={{
               backgroundImage: `url(https://i1.wp.com/cms.babbel.news/wp-content/uploads/2019/09/CM_MagazineHeader_10MostSpokenLanguages.png?resize=830%2C467)`,
               height: "8rem",
+              
               objectFit: "cover",
               backgroundPosition: "center",
+              
             }}
           >
-            <a>
-              <div className="profile-pic overflow-hidden position-absolute">
+            <div id='newBox'> 
+              <span className=' overflow-hidden profile-pic'>
                 <img
-                  className="img-fluid"
+roundedCircle
+id='img-fluid'
+                  // className="img-fluid "
                   src={this.state.loading ? "loading" : this.state.user.image}
                   alt="profile pic"
                 />
-              </div>
-            </a>
+               </span>
+              
+            </div>
           </div>
           <div className="name-title border-bottom text-center  pb-2 px-2">
             <a>
