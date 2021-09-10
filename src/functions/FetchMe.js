@@ -15,10 +15,50 @@ export const FetchMe = async () => {
     if (response.ok) {
       const user = await response.json();
 
-     return user;
+      return user;
     }
   } catch (error) {
     console.log(error);
     throw error;
+  }
+};
+
+
+
+
+export const submitPost = async ( requestBody, setState) => {
+  // e.preventDefault();
+  
+  try {
+    
+    const response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/posts/",
+      {
+        method: "POST",
+        headers: {  "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2NjMxYTdiZTZjMTAwMTVmOWRiZDUiLCJpYXQiOjE2MzA5NTQyNjYsImV4cCI6MTYzMjE2Mzg2Nn0.HogYsweMAQUpppsrUiwowbIdCFQ7dOSSLbEGyxsl5IQ",
+        },
+        body: JSON.stringify(requestBody),
+        
+        
+      }
+    );
+
+    if (response.ok) {
+      
+
+
+      setState({ text: `` });
+console.log('is it or not? ', requestBody) 
+
+      const post = await response.json();
+      const formData = new FormData();
+      
+      
+    } else {console.log(" error terror ");
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
