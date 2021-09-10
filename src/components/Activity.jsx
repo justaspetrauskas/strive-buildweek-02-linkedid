@@ -73,6 +73,7 @@ const Activity = () => {
                   width: "80px",
                   height: "60px",
                   objectFit: "cover",
+                  paddingLeft: "10px",
                 }}
               />
             </Col>

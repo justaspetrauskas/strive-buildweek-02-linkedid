@@ -69,7 +69,7 @@ const UpdateExperience = ({ editDetails }) => {
     <div>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Update Experience</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
