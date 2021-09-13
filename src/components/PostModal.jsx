@@ -1,236 +1,25 @@
-import {
-  Modal,
-  Button,
-  Container,
-  Form,
-  Col,
-  Row,
-  Dropdown,
-} from "react-bootstrap";
 import "../style/PostModal.css";
 import { FetchMe } from "../functions/FetchMe";
 import { submitPost } from "../functions/FetchMe";
-import { FcPicture, FcPhotoReel, FcPlanner, FcLandscape } from "react-icons/fc";
+
 import { FaIndent } from "react-icons/fa";
-import {  useEffect } from "react";
+import { BsImage } from "react-icons/bs";
+import { RiVideoFill, RiArrowDownSFill } from "react-icons/ri";
+import { BiCalendarEvent } from "react-icons/bi";
+import CreateAPost from "./CreateAPost";
 
-// class PostModal extends React.Component {
-//   state = {
-//     show: false,
-//     loading: true,
-//     userPost: null,
-//     // postImage : null,
-//   };
+import { useState, useEffect } from "react";
 
-//   // fetching/Get data for 1 user
-//   componentDidMount = async () => {
-//     try {
-//       const user = await FetchMe();
-//       this.setState({ user, loading: false });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   //Whe do you to do the post request?
-//   // on submit, or after clickling a button
-//   // you can create a function to be called everytime the submit button is clicked
-//   // this function function will call the request fuction
-
-//   handleClose = () => this.setState({ show: false });
-//   handleShow = () => this.setState({ show: true });
-//   // /////////////////////////////////////////////////
-//   // handlerPost =  (e) => {
-
-//   //   // this.setState({userPost: {...this.setState.userPost}})
-//   // //=  (event) => this.setState({userPost : event.target.value })
-//   // };
-
-//   render() {
-//     return (
-//       <>
-//         <Container className="mb-6 border" id="BigBox">
-//           <Row>
-//             <Col md={1}>
-//               <img
-//                 onClick={this.handleShow}
-//                 className="img-fluid-post"
-//                 src={this.state.loading ? "loading" : this.state.user.image}
-//                 alt="profile pic"
-//               />
-//             </Col>
-//             <Col md={3}>
-//               <Form>
-//                 <Form.Group className="mb-3">
-//                   <Form.Control
-//                     type="text"
-//                     placeholder="Start a post "
-//                     id="input"
-//                     onClick={this.handleShow}
-//                   />
-//                 </Form.Group>
-//               </Form>
-//             </Col>
-//           </Row>
-//           <Modal show={this.state.show} onHide={this.handleClose}>
-//             <Modal.Header closeButton>
-//               <Modal.Title>
-//                 <h4> Create a post </h4>
-//               </Modal.Title>
-//             </Modal.Header>
-//             <Modal.Body>
-//               <Row>
-//                 <Col md={1}>
-//                   <img
-//                     onClick={this.handleShow}
-//                     className="img-fluid-post text-left"
-//                     src={this.state.loading ? "loading" : this.state.user.image}
-//                     alt="profile pic"
-//                   />
-//                 </Col>
-//                 <Col>
-//                   <h3 className="pl-3">
-//                     {this.state.loading ? "loading" : this.state.user.name}
-//                     <span> </span>
-//                     {this.state.loading ? "loading" : this.state.user.surname}
-//                   </h3>
-//                   <Dropdown className="pl-4">
-//                     <Dropdown.Toggle variant="light" id="dropdown-basic">
-//                       AnyOne
-//                     </Dropdown.Toggle>
-
-//                     <Dropdown.Menu>
-//                       <Dropdown.Item href="#/action-1">sth</Dropdown.Item>
-//                       <Dropdown.Item href="#/action-2">
-//                         say whatt??
-//                       </Dropdown.Item>
-//                       <Dropdown.Item href="#/action-3">yye?</Dropdown.Item>
-//                     </Dropdown.Menu>
-//                   </Dropdown>
-//                 </Col>
-//               </Row>
-//             </Modal.Body>
-//             <Modal.Body>
-//               <Form.Group className="mb-3" onSubmit={this.submitPost}>
-//                 <Form.Control
-//                   as="textarea"
-//                   rows={20}
-//                   value={this.state.userPost}
-//                   placeholder="What do you want to talk about? "
-//                   onChange={
-//                     this.handlerPost
-//                     // (e)=>this.setState({userPost : target.value})
-//                   }
-//                 />
-//               </Form.Group>
-//             </Modal.Body>
-//             <Modal.Footer>
-//               <Button
-//                 variant="primary"
-//                 onClick={(e) => {
-//                   submitPost(this.state.userPost);
-//                 }}
-//               >
-//                 Submit
-//               </Button>
-//               <Button variant="primary" onClick={this.handleClose}>
-//                 Close
-//               </Button>
-//             </Modal.Footer>
-//           </Modal>
-//           <Row>
-//             <Col className="icons">
-//               <FcPicture />
-//             </Col>
-//             <Col className="icons ">
-//               {" "}
-//               <FcPhotoReel />{" "}
-//             </Col>{" "}
-//             <Col className="icons">
-//               <FcPlanner />{" "}
-//             </Col>{" "}
-//             <Col className="icons">
-//               <FcLandscape></FcLandscape>
-//             </Col>
-//           </Row>
-//         </Container>
-//       </>
-//     );
-//   }
-// }
-
-// export default PostModal;
-
-import React, { useState } from "react";
-
+const BASE_URL = "https://striveschool-api.herokuapp.com/api/profile/me";
 
 const PostModal = (props) => {
   const [enteredPost, setEnteredPost] = useState({
     text: "",
   });
 
+  const [postProfile, setPostProfile] = useState([]);
 
-  const [showPic, setShowPic] = useState([])
-
- 
-  const handlerPost = (event) => {
-    setEnteredPost({ text: event.target.value });
-  };
-
-  const submitPost = async (event) => {
-    event.preventDefault();
-
-    // const dataPost =
-    try {
-      const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2NjMxYTdiZTZjMTAwMTVmOWRiZDUiLCJpYXQiOjE2MzA5NTQyNjYsImV4cCI6MTYzMjE2Mzg2Nn0.HogYsweMAQUpppsrUiwowbIdCFQ7dOSSLbEGyxsl5IQ",
-          },
-          body: JSON.stringify(enteredPost),
-        }
-      );
-
-      if (response.ok) {
-        setEnteredPost({ text: "" });
-        const post = await response.json();
-        const formData = new FormData();
-        try {
-          const response = await fetch(
-            `https://striveschool-api.herokuapp.com/api/posts/${post._id}`,
-            {
-              method: "POST",
-              body: formData,
-              headers: {
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2NjMxYTdiZTZjMTAwMTVmOWRiZDUiLCJpYXQiOjE2MzA5NTQyNjYsImV4cCI6MTYzMjE2Mzg2Nn0.HogYsweMAQUpppsrUiwowbIdCFQ7dOSSLbEGyxsl5IQ",
-              },
-            }
-          );
-
-          if (response.ok) {
-            props.fetchPosts();
-          } else {
-            console.log("error");
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      } else {
-        console.log("there was an error ");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const BASE_URL = "https://striveschool-api.herokuapp.com/api/profile/me";
-
-   const FetchMe = async () => {
+  const fetchMe = async () => {
     try {
       const response = await fetch(`${BASE_URL}	`, {
         headers: {
@@ -240,9 +29,7 @@ const PostModal = (props) => {
       });
       if (response.ok) {
         const user = await response.json();
-        setShowPic(user)
-  
-        
+        setPostProfile(user);
       }
     } catch (error) {
       console.log(error);
@@ -250,145 +37,58 @@ const PostModal = (props) => {
     }
   };
   useEffect(() => {
-    FetchMe();
+    fetchMe();
   }, []);
-  
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  return (    
-      <div className="post-center box">
-        <div className="d-flex">
-           <img
-              className="post-profile-img mr-2"
-
-              id='picOK'
-              src={showPic.image}
-onClick={handleShow}
-              alt=""
-            />
-            
-            
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title><h4> Create a post </h4></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          
-        <Row>
-                 <Col md={1}> 
-                   <img
-                    // onClick={this.handleShow}
-                     className="img-fluid-post text-left inner"
-                     src={showPic.image}
-                     alt="profile pic"
-                   />
-                 </Col>
-                 <Col><Dropdown className="pl-4 ">
-                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                       AnyOne
-                     </Dropdown.Toggle>
-
-                     <Dropdown.Menu>
-                       <Dropdown.Item href="#/action-1">sth</Dropdown.Item>
-                       <Dropdown.Item href="#/action-2">
-                         say whatt??
-                       </Dropdown.Item>
-                       <Dropdown.Item href="#/action-3">yye?</Dropdown.Item>
-                     </Dropdown.Menu>
-                   </Dropdown>
-                   <h3 className="pl-5">
-                     {showPic.name}
-                     <span>  {showPic.surname} </span>
-                     
-                   </h3>
-                   
-                 </Col>
-               </Row>
-             </Modal.Body>
-             <Modal.Body>
-               <Form.Group className="mb-3" onSubmit={submitPost}
-               
-              //  onSubmit={this.submitPost}
-               >
-                 <Form.Control onSubmit={submitPost}
-                   as="textarea"
-                   rows={10}
-                   //value={this.state.userPost}
-                   placeholder="What do you want to talk about? "
-                   value={enteredPost.text}
-                   onChange={handlerPost}
-              onClick={handleShow}
-                   //onChange={
-                     //this.handlerPost
-                     // (e)=>this.setState({userPost : target.value})
-                  // }
-                 />
-               </Form.Group>
-          
-          
-          
-          
-          
-          </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handlerPost, handleClose }>
-           Post it
-          </Button>
-        </Modal.Footer>
-      </Modal>
-          
-          <form onSubmit={submitPost} className="w-100">
-            <input
-              className="post-input"
-              value={enteredPost.text}
-              placeholder="What do you want to talk about"
-              type="text"
-              name=""
-              id="inputForPost"
-              onChange={handlerPost}
-              onClick={handleShow}
-            />{" "}
-            <br />
-            {/* <input
-              type="file"
-              onChange={(e) => setPostImage(e.target.files[0])}
-            /> */}
-            {/* <button type="submit"></button>  */}
-          </form>
+  return (
+    <div className="share-post-wrapper">
+      <div className="share-post-top">
+        <div className="share-post-profile-img">
+          <img src={postProfile.image} alt="" />
         </div>
-        <div className="d-flex justify-content-between my-4">
-          <div className="post-icons">
-            <FcPhotoReel style={{ fontSize: "1.6rem" }} />
-            <span>Photo</span>
-          </div>
-          <div className="post-icons ">
-            <span>
-              <FcPlanner style={{ fontSize: "1.6rem" }} />
-            </span>
-            <span>Video</span>
-          </div>
-
-          <div className="post-icons">
-            <FcLandscape style={{ fontSize: "1.6rem" }} />
-            <span>Event</span>
-          </div>
-
-          <div className="post-icons pr-3">
-            <FaIndent style={{ fontSize: "1.6rem", color: "#fc9295"  }} />
-            <span>Write article</span>
-          </div>
-        </div>
+        <button class="share-post-btn" onClick={handleShow}>
+          <span>Start a post</span>
+        </button>
+        {show && (
+          <CreateAPost
+            showState={show}
+            handleClose={handleClose}
+            postProfile={postProfile}
+          />
+        )}
       </div>
-     
-    
+      <div className="share-post-bottom">
+        <span tabIndex="-1">
+          <button className="post-option">
+            <BsImage size={"22"} fill={"#70B5F9"} />
+            <span>Photo</span>
+          </button>
+        </span>
+        <span tabIndex="-1">
+          <button className="post-option">
+            <RiVideoFill size={"22"} fill={"#7FC15E"} />
+            <span>Video</span>
+          </button>
+        </span>
+        <span tabIndex="-1">
+          <button className="post-option">
+            <BiCalendarEvent size={22} fill={"#E7A33E"} />
+            <span>Event</span>
+          </button>
+        </span>
+        <span tabIndex="-1">
+          <button className="post-option">
+            <FaIndent size={22} fill={"#FC9295"} />
+            <span>Write article</span>
+          </button>
+        </span>
+      </div>
+    </div>
   );
 };
 
