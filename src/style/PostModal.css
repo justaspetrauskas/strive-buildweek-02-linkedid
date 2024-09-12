@@ -1,0 +1,110 @@
+#BigBox {
+  height: 150px;
+  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 0.6rem;
+}
+
+.img-fluid-post {
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#input {
+  margin-top: 15px;
+  margin-left: 35px;
+  display: flex;
+  height: 55px;
+  width: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(218, 218, 218);
+}
+.icons {
+  font-size: 33px;
+  padding: 0%;
+  margin-left: 55px;
+  margin-bottom: 29px;
+}
+#BigBox > div:nth-child(n) {
+  padding: 0%;
+}
+#root
+  > div
+  > div
+  > div
+  > div.main-feed.col-md-6.col-12
+  > div.post-form.border
+  > div
+  > div:nth-child(1)
+  > form
+  > input[type="file"]:nth-child(3) {
+  display: none;
+}
+
+#inputForPost {
+  width: 96%;
+  height: 55px;
+  border-radius: 5px;
+  padding: 5%;
+  cursor: pointer;
+  border: 1px solid rgb(219, 218, 218);
+}
+
+.post-center {
+  height: 140px;
+  padding-left: 5%;
+  padding-top: 3%;
+  border: none;
+}
+#root
+  > div
+  > div
+  > div
+  > div.main-feed.col-md-6.col-12
+  > div.post-form.border
+  > div
+  > div.d-flex.justify-content-between.my-2
+  > div:nth-child(4) {
+  padding-right: 22px;
+}
+#picOK {
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.box {
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+#img-fluid {
+  height: 96px;
+  width: auto;
+}
+#dropdown-basic {
+  width: 80px;
+  height: 35px;
+  font-size: 13px;
+
+  margin-top: 10px;
+  padding: 0%;
+}
+body
+  > div.fade.modal.show
+  > div
+  > div
+  > div:nth-child(2)
+  > div
+  > div.col
+  > div {
+  padding: 0%;
+  margin-top: 15px;
+}
+
+.inner {
+  height: 100px;
+}

@@ -1,36 +1,31 @@
-import logo from "./logo.svg";
+// css
 import "./App.css";
-require("dotenv").config();
-import {
-  BrowserRouter as Router, Route} from 'react-router-dom';
-import { Container } from "react-bootstrap";
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import SideBar from './components/SideBar'
-import Profile from './components/Profile';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
+// router
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// pages
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+
+import MainPage from "./components/MainPage";
+// import MainFeed from "./components/MainFeed";
+import FeedPage from "./components/FeedPage";
 
 function App() {
   return (
-    <>
-<Router >
-<Navbar />
+    <div className="main-wrapper">
+      <Router>
+        <Navigation />
+        <Route path="/" exact component={MainPage} />
+        {/* this will be feed */}
+        <Route path="/feed" exact component={FeedPage} />
 
-<Container >
-  <Row>  
-    
-    <Col md={9}><Route path = '/' exact component= {Profile} /> <Profile /> </Col>
-    <Col md={3}> <SideBar /> </Col>
-    </Row> 
-  
-   <Conainer />
-
-
-
-
-<Footer />
-</Router>
-    </>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

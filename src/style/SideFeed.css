@@ -1,0 +1,46 @@
+.card{
+    border-radius: 12px;
+}
+.details-news{
+    font-size: smaller;
+    color:gray;
+}
+.news-lists{
+    font-size: 15px;
+    margin-left: -20px;
+    margin-top: -25px;
+    color: black;
+}
+.details-course{
+    font-size: smaller;
+    color:gray;
+}
+.course-lists{
+    font-size: 15px;
+    margin-left: -20px;
+    margin-top: -25px;
+    color: black;
+}
+
+.dropdown-course{
+    margin: 0;
+}
+.card{
+    margin-bottom: 10px;
+}
+
+.footer-info{
+    font-size: small;
+    color: gray;
+    word-spacing: 5px;
+    
+    
+}
+
+.copyright{
+    color: gray;
+    font-size: small;
+}
+.footer{
+    align-content: center;
+}
